@@ -51,6 +51,8 @@ class Profile extends Component{
       { value: 'basketball', label: 'Basketball' },
       { value: 'baseball', label: 'Baseball'  },
       { value: 'soccer', label: 'Soccer' },
+      { value: 'ultimate-frisbee', label: 'Ultimate Frisbee' },
+      { value: 'tennis', label: 'Tennis' },
     ]
 
     return(
