@@ -4,7 +4,12 @@ import { compose, withProps } from "recompose"
 
 
 class MapPage extends Component{
+  // constructor(props){
+  //   super(props)
+  // }
+
   render(){
+    console.log(this.props);
     const MyMapComponent = compose(
       withProps({
         googleMapURL:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1KnuoMAfRa_XgUkNqaFswmL__SNCQMc&callback=initMap",
@@ -17,9 +22,9 @@ class MapPage extends Component{
     )((props) =>
       <GoogleMap
         defaultZoom={15}
-        defaultCenter={{ lat: 43.6532, lng: -79.3832 }}
+        defaultCenter={this.props.currentLocation}
       >
-        {props.isMarkerShown && <Marker position={{ lat: 43.6532, lng: -79.3832 }} />}
+        {props.isMarkerShown && <Marker position={this.props.currentLocation} />}
       </GoogleMap>
     )
     return(

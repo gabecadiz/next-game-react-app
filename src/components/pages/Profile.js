@@ -10,7 +10,8 @@ class Profile extends Component{
     distance: 20,
     sports: null,
     startDate: new Date(),
-    endDate: new Date()
+    endDate: new Date(),
+    currentLocation: { lat: 43.64434, lng: -79.401984 }
   }
 
   handleChange = (e) => {

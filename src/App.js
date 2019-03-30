@@ -12,13 +12,17 @@ class App extends Component {
   state = {
     distance: null,
     sports: null,
+    currentLocation: { lat: 43.64434, lng: -79.401984 }
   }
 
 addPreferences = (preferences) => {
   console.log(preferences)
   this.setState({
     distance: preferences.distance,
-    sports: preferences.sports
+    sports: preferences.sports,
+    startDate: preferences.startDate,
+    endDate: preferences.endDate,
+    currentLocation: preferences.currentLocation
   })
 }
   render() {
@@ -30,7 +34,9 @@ addPreferences = (preferences) => {
             <Profile addPreferences={this.addPreferences}/>
           )} />
           <Route path="/about" component={About}/>
-          <Route path="/map" component={MapPage}/>
+          <Route path="/map"
+                 render={(props) => (<MapPage {...props} currentLocation={this.state.currentLocation}/>)}
+          />
         </div>
       </Router>
     );
