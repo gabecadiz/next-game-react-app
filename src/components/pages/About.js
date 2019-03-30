@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ControlledCarousel from '../ControlledCarousel'
 
-function About(){
-  return (
-    <div style={aboutStyle}>
-      <h1> About Page </h1>
-      <p> This is just to test routes </p>
-    </div>
-  )
+class About extends Component{
+  
+
+  render(){
+    
+    return(
+     <div>
+       <ControlledCarousel currentLocation={this.props.currentLocation}/>
+     </div>
+    )
+  }
+
 }
-
-const aboutStyle = {
-  margin: "0.5rem",
-}
-
 export default About;

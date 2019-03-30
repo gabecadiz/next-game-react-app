@@ -33,7 +33,9 @@ addPreferences = (preferences) => {
           <Route exact path = "/" render={props => (
             <Profile addPreferences={this.addPreferences}/>
           )} />
-          <Route path="/about" component={About}/>
+          <Route path="/about" 
+                 render={(props) => (<About {...props} currentLocation={this.state.currentLocation}/>)}
+          />
           <Route path="/nextgames"
                  render={(props) => (<NextGamePage {...props} currentLocation={this.state.currentLocation}/>)}
           />
