@@ -7,7 +7,7 @@ function Header(props){
       <h1 style={headerText}>Next Game</h1>
       <Link style={linkStyle} to="/">Profile</Link>  | 
       <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-      <Link style={linkStyle} to="/about"> About </Link> 
+      <Link style={linkStyle} to="/mygames"> MyGames </Link> 
     </header>
   )
 }

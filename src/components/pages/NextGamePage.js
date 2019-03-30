@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import GoogleMapComponent from '../GoogleMapComponent.js'
+import ControlledCarousel from '../ControlledCarousel'
 
-
-class NextGamePage extends Component{
+class NextGames extends Component{
+  
 
   render(){
     
     return(
-      <React.Fragment>
-        <GoogleMapComponent currentLocation={this.props.currentLocation}/>
-        <GoogleMapComponent currentLocation={this.props.currentLocation}/>
-        <GoogleMapComponent currentLocation={this.props.currentLocation}/>
-      </React.Fragment>
+     <div>
+       <ControlledCarousel currentLocation={this.props.currentLocation}/>
+     </div>
     )
   }
-}
 
-export default NextGamePage
+}
+export default NextGames;

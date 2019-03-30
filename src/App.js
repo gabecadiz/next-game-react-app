@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
-import About from "./components/pages/About";
+import MyGames from "./components/pages/MyGamesPage";
 import Profile from "./components/pages/Profile"
 import NextGamePage from "./components/pages/NextGamePage"
 
@@ -33,8 +33,8 @@ addPreferences = (preferences) => {
           <Route exact path = "/" render={props => (
             <Profile addPreferences={this.addPreferences}/>
           )} />
-          <Route path="/about" 
-                 render={(props) => (<About {...props} currentLocation={this.state.currentLocation}/>)}
+          <Route path="/mygames" 
+                 render={(props) => (<MyGames {...props} currentLocation={this.state.currentLocation}/>)}
           />
           <Route path="/nextgames"
                  render={(props) => (<NextGamePage {...props} currentLocation={this.state.currentLocation}/>)}
