@@ -8,7 +8,8 @@ class Profile extends Component{
   state={
     distance: 20,
     sports: null,
-    startDate: new Date()
+    startDate: new Date(),
+    endDate: new Date()
   }
 
   handleChange = (e) => {
@@ -18,9 +19,20 @@ class Profile extends Component{
     })
   }
 
-  changeDate = (date) => {
+  addDays = (theDate, days) => {
+    let newDate = theDate.setDate(theDate.getDate() + days)
+    return newDate;
+  }
+
+  changeStartDate = (date) => {
     this.setState({
       startDate: date
+    });
+  }
+
+  changeEndDate = (date) => {
+    this.setState({
+      endDate: date
     });
   }
 
@@ -63,8 +75,23 @@ class Profile extends Component{
         <br></br>
         <h6>When?</h6>
         <DatePicker
+        name="startDate"
         selected={this.state.startDate}
-        onChange={this.changeDate}
+        onChange={this.changeStartDate}
+        minDate={new Date()}
+        maxDate={this.addDays(new Date(), 7)}
+        showTimeSelect
+        timeFormat="HH:mm"
+        timeIntervals={15}
+        dateFormat="MMMM d, yyyy h:mm aa"
+        timeCaption="time"
+        />
+        <DatePicker
+        name="endDate"
+        selected={this.state.endDate}
+        onChange={this.changeEndDate}
+        minDate={this.state.endDate}
+        maxDate={this.addDays(new Date(), 7)}
         showTimeSelect
         timeFormat="HH:mm"
         timeIntervals={15}
