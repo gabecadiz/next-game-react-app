@@ -55,6 +55,7 @@ class Profile extends Component{
 
     return(
       <div>
+        <h2>MAKE SURE TO CLICK BUTTON FOR NEXT PAGES TO LOAD</h2>
         <h1>User image</h1>
         <h4>Username</h4>
         <br></br>

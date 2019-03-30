@@ -5,7 +5,6 @@ import { compose, withProps } from "recompose"
 
 class GoogleMapComponent extends Component{ 
 render(){
-    console.log(this.props);
     const MyMapComponent = compose(
       withProps({
         googleMapURL:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1KnuoMAfRa_XgUkNqaFswmL__SNCQMc&callback=initMap",
@@ -18,9 +17,9 @@ render(){
     )((props) =>
       <GoogleMap
         defaultZoom={15}
-        defaultCenter={this.props.currentLocation}
+        defaultCenter={this.props.location}
       >
-        {props.isMarkerShown && <Marker position={this.props.currentLocation} />}
+        {props.isMarkerShown && <Marker position={this.props.location} />}
       </GoogleMap>
     )
     return(

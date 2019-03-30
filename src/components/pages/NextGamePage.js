@@ -8,7 +8,7 @@ class NextGames extends Component{
     
     return(
      <div>
-       <ControlledCarousel currentLocation={this.props.currentLocation}/>
+      <ControlledCarousel locationsData={this.props.locationsData}/>
      </div>
     )
   }

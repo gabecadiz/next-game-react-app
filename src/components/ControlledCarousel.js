@@ -23,6 +23,7 @@ class ControlledCarousel extends Component {
     }
   
     render() {
+      console.log(this.props)
       const { index, direction } = this.state;
   
       return (
@@ -32,22 +33,13 @@ class ControlledCarousel extends Component {
           onSelect={this.handleSelect}
           interval={null}
         >
+
+        {this.props.locationsData.map( locationData => 
           <Carousel.Item>
-              <CarouselCard currentLocation={this.props.currentLocation}/>
-            
+            <CarouselCard locationData={locationData}/>
           </Carousel.Item>
-          
-          <Carousel.Item>
-          <CarouselCard currentLocation={this.props.currentLocation}/>
-  
-           
-          </Carousel.Item>
-          
-          <Carousel.Item>
-          <CarouselCard currentLocation={this.props.currentLocation}/>
-  
-        
-          </Carousel.Item>
+        )}
+
         
         </Carousel>
       );

@@ -15,14 +15,24 @@ class App extends Component {
     currentLocation: { lat: 43.64434, lng: -79.401984 }
   }
 
+dummyLocations = () => {
+  return (
+    [
+      {location: {lat: 43.6537, lng: -79.3930} , name: "Grange Park", sport: "Basketball", Time: new Date()},
+      {location: {lat: 43.6324, lng: -79.4095}, name: "Inukshuk Park", sport: "Baseball", Time: new Date()},
+      {location: {lat: 43.6700, lng: -79.3917}, name: "Village of Yorkville Park", sport: "Volleyball", Time: new Date()} 
+    ]
+  )
+}
+
 addPreferences = (preferences) => {
-  console.log(preferences)
   this.setState({
     distance: preferences.distance,
     sports: preferences.sports,
     startDate: preferences.startDate,
     endDate: preferences.endDate,
-    currentLocation: preferences.currentLocation
+    currentLocation: preferences.currentLocation,
+    locationsData: this.dummyLocations()
   })
 }
   render() {
@@ -34,10 +44,11 @@ addPreferences = (preferences) => {
             <Profile addPreferences={this.addPreferences}/>
           )} />
           <Route path="/mygames" 
-                 render={(props) => (<MyGames {...props} currentLocation={this.state.currentLocation}/>)}
+                 render={(props) => (<MyGames {...props} locationsData={this.state.locationsData}/>)}
           />
           <Route path="/nextgames"
-                 render={(props) => (<NextGamePage {...props} currentLocation={this.state.currentLocation}/>)}
+                 render={(props) => (<NextGamePage {...props} locationsData={this.state.locationsData}
+                  />)}
           />
         </div>
       </Router>
