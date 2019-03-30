@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./components/layout/Header";
+import About from "./components/pages/About";
+import Profile from "./components/pages/Profile"
+import MapPage from "./components/pages/MapPage"
+
+
 import './App.css';
 
 class App extends Component {
+  state = {
+    distance: null,
+    sports: null,
+  }
+
+addPreferences = (preferences) => {
+  console.log(preferences)
+  this.setState({
+    distance: preferences.distance,
+    sports: preferences.sports
+  })
+}
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+     <Router>
+        <div className="App">
+          <Header/>
+          <Route exact path = "/" render={props => (
+            <Profile addPreferences={this.addPreferences}/>
+          )} />
+          <Route path="/about" component={About}/>
+          <Route path="/map" component={MapPage}/>
+        </div>
+      </Router>
     );
   }
 }
