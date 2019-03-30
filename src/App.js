@@ -16,11 +16,12 @@ class App extends Component {
   }
 
 dummyLocations = () => {
+  const currentTime = new Date()
   return (
     [
-      {location: {lat: 43.6537, lng: -79.3930} , name: "Grange Park", sport: "Basketball", Time: new Date()},
-      {location: {lat: 43.6324, lng: -79.4095}, name: "Inukshuk Park", sport: "Baseball", Time: new Date()},
-      {location: {lat: 43.6700, lng: -79.3917}, name: "Village of Yorkville Park", sport: "Volleyball", Time: new Date()} 
+      {location: {lat: 43.6537, lng: -79.3930} , name: "Grange Park", sport: "Basketball", time: currentTime.toString()},
+      {location: {lat: 43.6324, lng: -79.4095}, name: "Inukshuk Park", sport: "Baseball", time: currentTime.toString()},
+      {location: {lat: 43.6700, lng: -79.3917}, name: "Village of Yorkville Park", sport: "Volleyball", time: currentTime.toString()} 
     ]
   )
 }

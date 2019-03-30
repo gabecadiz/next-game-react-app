@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ControlledCarousel from '../ControlledCarousel'
+import ExampleAccordion from '../ExampleAccordion'
 
 
 class MyGames extends Component{
@@ -9,7 +9,7 @@ class MyGames extends Component{
     
     return(
       <div>
-       <ControlledCarousel locationsData={this.props.locationsData}/>
+        <ExampleAccordion locationsData={this.props.locationsData}/>
      </div>
     )
   }

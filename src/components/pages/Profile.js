@@ -17,7 +17,7 @@ class Profile extends Component{
   handleChange = (e) => {
     // console.log(e.target.value)
     this.setState({
-      // distance: e.target.value
+      distance: e.target.value
     })
   }
 
