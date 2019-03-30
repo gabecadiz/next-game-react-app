@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import addDays from "date-fns/addDays";
 
 
 class Profile extends Component{
@@ -17,11 +18,6 @@ class Profile extends Component{
     this.setState({
       // distance: e.target.value
     })
-  }
-
-  addDays = (theDate, days) => {
-    let newDate = theDate.setDate(theDate.getDate() + days)
-    return newDate;
   }
 
   changeStartDate = (date) => {
@@ -79,7 +75,7 @@ class Profile extends Component{
         selected={this.state.startDate}
         onChange={this.changeStartDate}
         minDate={new Date()}
-        maxDate={this.addDays(new Date(), 7)}
+        maxDate={addDays(new Date(), 7)}
         showTimeSelect
         timeFormat="HH:mm"
         timeIntervals={15}
@@ -91,7 +87,7 @@ class Profile extends Component{
         selected={this.state.endDate}
         onChange={this.changeEndDate}
         minDate={this.state.endDate}
-        maxDate={this.addDays(new Date(), 7)}
+        maxDate={addDays(new Date(), 7)}
         showTimeSelect
         timeFormat="HH:mm"
         timeIntervals={15}
