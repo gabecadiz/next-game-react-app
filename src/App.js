@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import About from "./components/pages/About";
 import Profile from "./components/pages/Profile"
-import MapPage from "./components/pages/MapPage"
+import NextGamePage from "./components/pages/NextGamePage"
 
 
 import './App.css';
@@ -34,8 +34,8 @@ addPreferences = (preferences) => {
             <Profile addPreferences={this.addPreferences}/>
           )} />
           <Route path="/about" component={About}/>
-          <Route path="/map"
-                 render={(props) => (<MapPage {...props} currentLocation={this.state.currentLocation}/>)}
+          <Route path="/nextgames"
+                 render={(props) => (<NextGamePage {...props} currentLocation={this.state.currentLocation}/>)}
           />
         </div>
       </Router>

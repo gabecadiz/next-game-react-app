@@ -3,19 +3,15 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import { compose, withProps } from "recompose"
 
 
-class MapPage extends Component{
-  // constructor(props){
-  //   super(props)
-  // }
-
-  render(){
+class GoogleMapComponent extends Component{ 
+render(){
     console.log(this.props);
     const MyMapComponent = compose(
       withProps({
         googleMapURL:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1KnuoMAfRa_XgUkNqaFswmL__SNCQMc&callback=initMap",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `90vh` }} />,
-        mapElement: <div style={{ height: `100%` }} />,
+        containerElement: <div style={{ height: `50vh`, width: '50vw' }} />,
+        mapElement: <div style={{ height: `50vh` }} />,
       }),
       withScriptjs,
       withGoogleMap
@@ -35,4 +31,4 @@ class MapPage extends Component{
   }
 }
 
-export default MapPage
+export default GoogleMapComponent
