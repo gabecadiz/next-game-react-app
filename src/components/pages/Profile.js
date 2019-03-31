@@ -11,17 +11,19 @@ class Profile extends Component{
     sports: null,
     startDate: new Date(),
     endDate: new Date(),
-    currentLocation: {lat: null, lng: null}
+    currentLocation: {lat: null, lng: null},
+    loadedLocation: false
   }
 
   componentDidMount(){
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({
         currentLocation: {
-          lat: location.coords.latitude, lng: location.coords.longitude
-        }
+          lat: parseFloat(location.coords.latitude.toFixed(8)), lng: parseFloat(location.coords.longitude.toFixed(8))
+        },
+        loadedLocation: true
       })
-    });
+    })
     }
 
   handleChange = (e) => {
@@ -60,7 +62,7 @@ class Profile extends Component{
   render(props){
     const sportOptions = [
       { value: 'basketball', label: 'Basketball' },
-      { value: 'baseball', label: 'Baseball'  },
+      { value: 'volleyball', label: 'Volleyball'  },
       { value: 'soccer', label: 'Soccer' },
       { value: 'ultimate-frisbee', label: 'Ultimate Frisbee' },
       { value: 'tennis', label: 'Tennis' },
@@ -68,6 +70,7 @@ class Profile extends Component{
 
     return(
       <div>
+        { !this.state.loadedLocation && <p>LOADING CURRENT LOCATION...</p>}
         <h2>MAKE SURE TO CLICK BUTTON FOR NEXT PAGES TO LOAD</h2>
         <h1>User image</h1>
         <h4>Username</h4>
