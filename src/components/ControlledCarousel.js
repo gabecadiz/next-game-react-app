@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import GoogleMapComponent from './GoogleMapComponent'
 import CarouselCard from './CarouselCard'
 
 class ControlledCarousel extends Component {
