@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import MyGames from "./components/pages/MyGamesPage";
-import Profile from "./components/pages/Profile"
+import PreferencesPage from "./components/pages/PreferencesPage"
 import NextGamePage from "./components/pages/NextGamePage"
-
-
 import './App.css';
+
 
 class App extends Component {
   state = {
@@ -42,14 +41,14 @@ addPreferences = (preferences) => {
         <div className="App">
           <Header/>
           <Route exact path = "/" render={props => (
-            <Profile addPreferences={this.addPreferences}/>
+            <PreferencesPage addPreferences={this.addPreferences}/>
           )} />
           <Route path="/mygames" 
                  render={(props) => (<MyGames {...props} locationsData={this.state.locationsData}/>)}
           />
           <Route path="/nextgames"
                  render={(props) => (<NextGamePage {...props} locationsData={this.state.locationsData}
-                  />)}
+          />)}
           />
         </div>
       </Router>
