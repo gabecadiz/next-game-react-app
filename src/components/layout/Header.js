@@ -5,10 +5,12 @@ function Header(props){
   return (
     <header style={headerStyle}>
       <h1 style={headerText}>Next Game</h1>
-      <Link style={linkStyle} to="/">Preferences</Link>  | 
+      <Link style={linkStyle} to="/">Landing Page</Link> | 
+      <Link style={linkStyle} to="/preferences">Preferences</Link> | 
       <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-      <Link style={linkStyle} to="/mygames"> MyGames </Link>  |
-      <Link style={linkStyle} to="/signup"> Sign Up</Link>
+      <Link style={linkStyle} to="/mygames"> MyGames </Link> |
+      <Link style={linkStyle} to="/signup"> Sign Up</Link> |
+      <Link style={linkStyle} to="/login"> Log In </Link>
     </header>
   )
 }

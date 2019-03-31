@@ -22,7 +22,6 @@ class ControlledCarousel extends Component {
     }
   
     render() {
-      console.log(this.props)
       const { index, direction } = this.state;
   
       return (

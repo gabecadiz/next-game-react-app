@@ -5,6 +5,9 @@ import MyGames from "./components/pages/MyGamesPage";
 import PreferencesPage from "./components/pages/PreferencesPage"
 import NextGamePage from "./components/pages/NextGamePage"
 import SignUpPage from "./components/pages/SignUpPage"
+import LoginPage from "./components/pages/LoginPage"
+import LandingPage from "./components/pages/LandingPage"
+
 import './App.css';
 
 
@@ -42,9 +45,12 @@ addPreferences = (preferences) => {
         <div className="App">
           <Header/>
           <Route exact path = "/" render={props => (
-            <PreferencesPage addPreferences={this.addPreferences}/>
+            <LandingPage/>
           )} />
           <Route path="/signup" component={SignUpPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path ="/preferences" 
+                 render={(props) => (<PreferencesPage {...props} addPreferences={this.addPreferences}/>)}/>
           <Route path="/mygames" 
                  render={(props) => (<MyGames {...props} locationsData={this.state.locationsData}/>)}
           />
