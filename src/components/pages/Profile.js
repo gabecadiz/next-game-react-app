@@ -11,8 +11,18 @@ class Profile extends Component{
     sports: null,
     startDate: new Date(),
     endDate: new Date(),
-    currentLocation: { lat: 43.64434, lng: -79.401984 }
+    currentLocation: {lat: null, lng: null}
   }
+
+  componentDidMount(){
+    navigator.geolocation.getCurrentPosition(location => {
+      this.setState({
+        currentLocation: {
+          lat: location.coords.latitude, lng: location.coords.longitude
+        }
+      })
+    });
+    }
 
   handleChange = (e) => {
     // console.log(e.target.value)
@@ -36,6 +46,7 @@ class Profile extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addPreferences(this.state)
+    console.log(this.state)
   }
 
   changeSport = (e) => {
