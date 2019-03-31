@@ -26,7 +26,6 @@ class PreferencesPage extends Component{
     }
 
   handleChange = (e) => {
-    // console.log(e.target.value)
     this.setState({
       distance: parseInt(e.target.value)
     })
