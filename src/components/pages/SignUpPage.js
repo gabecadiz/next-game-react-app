@@ -96,6 +96,7 @@ class SignUpPage extends Component{
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
+      password_confirmation: this.state.passwordConfirmation
       }
     )
     .then(function (response) {
