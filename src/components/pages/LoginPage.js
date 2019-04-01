@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class LoginPage extends Component {
   state={
     password:"",
-    email:""
+    username:""
   }
 
-  changeEmail = (e) => {
+  changeUsername = (e) => {
     this.setState({
-      email: e.target.value
+      username: e.target.value
     })
   }
 
@@ -20,15 +21,25 @@ class LoginPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    axios.post('http://localhost:3000/login', {
+      username: this.state.username,
+      password: this.state.password,
+      }
+    )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
       <label>
-        <p>Enter your email:</p>
-        <input type="email" onChange={this.changeEmail} value={this.state.email} name="email" ref="email" className="form-control" />
+        <p>Enter your username:</p>
+        <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
       </label>
       <br></br>
       <label>
