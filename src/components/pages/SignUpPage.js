@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import DateScheduler from '../DateScheduler'
 import DistanceSlider from '../DistanceSlider'
+import axios from 'axios'
 
 class SignUpPage extends Component{
   state={
@@ -29,11 +30,7 @@ class SignUpPage extends Component{
     })
     }
 
-  addPreferences = (preferences) => {
-      this.setState({
-        
-      })
-    }
+
     
   handleChange = (e) => {
     this.setState({
@@ -92,7 +89,16 @@ class SignUpPage extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
+    // console.log(this.state)
+    axios.post('localhost:3000/signup', {
+      state: this.state
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   render(){
