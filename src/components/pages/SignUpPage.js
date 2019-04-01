@@ -53,11 +53,6 @@ class SignUpPage extends Component{
       endDate: date
     });
   }
-    
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state)
-  }
 
   changeSport = (e) => {
     this.setState({
@@ -93,6 +88,11 @@ class SignUpPage extends Component{
     this.setState({
       passwordConfirmation: e.target.value
     })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state)
   }
 
   render(){
