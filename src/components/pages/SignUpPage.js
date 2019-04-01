@@ -90,14 +90,14 @@ class SignUpPage extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     // console.log(this.state)
-    const user = {
+
+    axios.post('http://localhost:3000/signup', {
       image: this.state.avatar,
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
-      passwordConfirmation: this.state.passwordConfirmation
-    }
-    axios.post('http://localhost:3000/signup', user )
+      }
+    )
     .then(function (response) {
       console.log(response);
     })
