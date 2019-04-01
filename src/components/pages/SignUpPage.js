@@ -90,7 +90,7 @@ class SignUpPage extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     // console.log(this.state)
-    axios.post('localhost:3000/signup', {
+    axios.post('http://localhost:3000/signup', {
       state: this.state
     })
     .then(function (response) {
