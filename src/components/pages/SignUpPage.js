@@ -18,7 +18,7 @@ class SignUpPage extends Component{
       currentLocation: {lat: null, lng: null},
       loadedLocation: false
   }
-    
+
   componentDidMount(){
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({
@@ -31,20 +31,20 @@ class SignUpPage extends Component{
     }
 
 
-    
+
   handleChange = (e) => {
     this.setState({
       distance: parseInt(e.target.value)
     })
   }
-    
+
   changeStartDate = (date) => {
     this.setState({
       startDate: date,
       endDate: date
     });
   }
-    
+
   changeEndDate = (date) => {
     this.setState({
       endDate: date
@@ -90,7 +90,7 @@ class SignUpPage extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     // console.log(this.state)
-    axios.post('localhost:3000/signup', {
+    axios.post('http://localhost:3000/signup', {
       state: this.state
     })
     .then(function (response) {
@@ -137,12 +137,12 @@ class SignUpPage extends Component{
         <SportSelector changeSport={this.changeSport}/>
         <br></br>
         <h6>When?</h6>
-        <DateScheduler 
-          startDate={this.state.startDate} 
+        <DateScheduler
+          startDate={this.state.startDate}
           changeDate={this.changeStartDate}
           minDate={new Date()}
         />
-        <DateScheduler 
+        <DateScheduler
           startDate={this.state.endDate}
           changeDate={this.changeEndDate}
           minDate={this.state.startDate}
@@ -154,8 +154,8 @@ class SignUpPage extends Component{
 
         <br></br>
 
-        <DistanceSlider 
-          distance={this.state.distance} 
+        <DistanceSlider
+          distance={this.state.distance}
           handleChange={this.handleChange}
         />
         <br></br>
