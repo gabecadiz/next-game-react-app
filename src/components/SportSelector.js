@@ -13,6 +13,7 @@ class SportSelector extends Component{
     return(
         <Select
           onChange={this.props.changeSport}
+          defaultValue={{value: 'basketball', label: 'Basketball'}}
           isMulti
           name="colors"
           options= {sportOptions}

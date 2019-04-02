@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import DateScheduler from '../DateScheduler'
-import DistanceSlider from '../DistanceSlider'
+
 
 
 class PreferencesPage extends Component{
@@ -83,16 +83,6 @@ class PreferencesPage extends Component{
           minDate={this.state.startDate}
         />
 
-        <br></br>
-        <br></br>
-        <h6>How far?</h6>
-
-        <br></br>
-
-        <DistanceSlider 
-          distance={this.state.distance} 
-          handleChange={this.handleChange}
-        />
         <br></br>
         <button type="submit" className="btn btn-primary">Find My Next Game</button>
 

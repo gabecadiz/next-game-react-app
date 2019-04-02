@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import DateScheduler from '../DateScheduler'
-import DistanceSlider from '../DistanceSlider'
 import axios from 'axios'
 
 class SignUpPage extends Component{
@@ -92,11 +91,14 @@ class SignUpPage extends Component{
     // console.log(this.state)
 
     axios.post('http://localhost:3000/signup', {
-      image: this.state.avatar,
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      password_confirmation: this.state.passwordConfirmation
+      User: 
+      {
+        image: this.state.avatar,
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+        password_confirmation: this.state.passwordConfirmation
+        }
       }
     )
     .then(function (response) {
@@ -155,16 +157,7 @@ class SignUpPage extends Component{
         />
 
         <br></br>
-        <br></br>
-        <h6>How far?</h6>
 
-        <br></br>
-
-        <DistanceSlider
-          distance={this.state.distance}
-          handleChange={this.handleChange}
-        />
-        <br></br>
         <button type="submit" className="btn btn-primary">Sign Up</button>
         </form>
       </div>
