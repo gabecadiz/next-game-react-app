@@ -91,7 +91,7 @@ class SignUpPage extends Component{
     // console.log(this.state)
 
     axios.post('http://localhost:3000/signup', {
-      User: 
+      user: 
       {
         image: this.state.avatar,
         username: this.state.username,
