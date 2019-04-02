@@ -17,12 +17,12 @@ class ExampleAccordion extends Component{
       <Accordion>
 
         {this.props.savedGames.map( locationData => 
-          <AccordionItem>
+          <AccordionItem key={locationData.id}>
             <AccordionItemTitle>
-              <p>{locationData.location}</p><p>{locationData.time} - {locationData.date}</p>
+              <p><strong>{locationData.facility}</strong></p><p>{locationData.time} - {locationData.date}</p>
             </AccordionItemTitle>
             <AccordionItemBody>
-              <AccordionCard locationData={locationData}/>
+              <AccordionCard locationData={locationData} />
             </AccordionItemBody>
           </AccordionItem>
         )}
