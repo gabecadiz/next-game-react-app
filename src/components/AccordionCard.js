@@ -6,7 +6,7 @@ class AccordionCard extends Component{
         return(
             <div className="next-game-card">
             {/* User should be able to remove saved game */}
-            <button class="bttn bttn primary">Remove</button>
+            <button className="btn btn primary">Remove</button>
             <br></br>
                   <p><strong>Sport:</strong> {this.props.locationData.sport}</p>
                   <p><strong>Starting Time:</strong> {this.props.locationData.time}</p>

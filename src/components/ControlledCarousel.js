@@ -32,8 +32,8 @@ class ControlledCarousel extends Component {
           interval={null}
         >
 
-        {this.props.locationsData.map( locationData => 
-          <Carousel.Item>
+        {this.props.savedGames.map( (locationData, index )=> 
+          <Carousel.Item key={index}> 
             <CarouselCard locationData={locationData}/>
           </Carousel.Item>
         )}
