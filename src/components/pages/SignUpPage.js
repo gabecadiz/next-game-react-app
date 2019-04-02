@@ -92,11 +92,13 @@ class SignUpPage extends Component{
     // console.log(this.state)
 
     axios.post('http://localhost:3000/signup', {
-      image: this.state.avatar,
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      password_confirmation: this.state.passwordConfirmation
+      user: {
+        image: this.state.avatar,
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password,
+        password_confirmation: this.state.passwordConfirmation
+        }
       }
     )
     .then(function (response) {
