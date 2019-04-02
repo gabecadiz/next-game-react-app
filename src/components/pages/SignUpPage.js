@@ -98,11 +98,14 @@ class SignUpPage extends Component{
         email: this.state.email,
         password: this.state.password,
         password_confirmation: this.state.passwordConfirmation
-        }
-      }
+        },
+      },
+      {withCredentials: true}
     )
     .then(function (response) {
       console.log(response);
+      return axios.get('http://localhost:3000/session', {withCredentials: true})
+        .then(r => console.log("checking after", r))
     })
     .catch(function (error) {
       console.log(error);
