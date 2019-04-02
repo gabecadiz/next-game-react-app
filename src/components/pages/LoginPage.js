@@ -24,8 +24,11 @@ class LoginPage extends Component {
     axios.post('http://localhost:3000/login', {
       username: this.state.username,
       password: this.state.password,
+    }, {
+      headers: {
+        credentials: 'same-origin',
       }
-    )
+    })
     .then(function (response) {
       console.log(response);
     })
@@ -38,7 +41,7 @@ class LoginPage extends Component {
     return(
       <form onSubmit={this.handleSubmit}>
       <label>
-        <p>Enter your username:</p>
+        <p>Enter your username test:</p>
         <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
       </label>
       <br></br>
