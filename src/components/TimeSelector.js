@@ -6,7 +6,7 @@ import '../time-picker.css'
 class TimeSelector extends Component{
     
     saveTime = (options) => {
-        this.props.onTimeChange(options, this.props.day);
+        this.props.onTimeChange(options, this.props.day)
     }
 
 

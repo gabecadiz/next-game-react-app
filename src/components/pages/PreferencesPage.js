@@ -46,7 +46,7 @@ class PreferencesPage extends Component{
       minute,
     } = options;  
     this.setState({
-      selectedDays: { ...this.state.selectedDays, [`${day}`]: hour + minute}
+      selectedDays: { ...this.state.selectedDays, [`${day}`]: hour + ":" + minute}
     });
     console.log(this.state)
   };
@@ -117,23 +117,53 @@ checkChange = (e) => {
         <label><input type="checkbox" value='sunday' defaultChecked={this.state.selectedDays.sunday} onChange={this.checkChange}/><span>Sunday</span>
         </label>
         </span>
-        <span>
+        <div>
           <p>Between:</p>
+        </div>
+        <span>
           <br></br>
-          <TimeSelector day="mondayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.mondayStart} id="mondayStart" />
-          <TimeSelector day="mondayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.mondayEnd} id="mondayEnd" />
-          <TimeSelector day="tuesdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.tuesdayStart} id="tuesdayStart" />
-          <TimeSelector day="tuesdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.tuesdayEnd} id="tuesdayEnd" />
-          <TimeSelector day="wednesdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.wednesdayStart} id="wednesdayStart" />
-          <TimeSelector day="wednesdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.wednesdayEnd} id="wednesdayEnd" />
-          <TimeSelector day="thursdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.thursdayStart} id="thursdayStart" />
-          <TimeSelector day="thursdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.thursdayEnd} id="thursdayEnd" />
-          <TimeSelector day="fridayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.fridayStart} id="fridayStart" />
-          <TimeSelector day="fridayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.fridayEnd} id="fridayEnd" />
-          <TimeSelector day="saturdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.saturdayStart} id="saturdayStart" />
-          <TimeSelector day="saturdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.saturdayEnd} id="saturdayEnd" />
-          <TimeSelector day="sundayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.sundayStart} id="sundayStart" />
-          <TimeSelector day="sundayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.sundayEnd} id="sundayEnd" />
+          {!this.state.selectedDays.monday ? <p></p> : 
+            <div>
+              <TimeSelector day="mondayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.mondayStart} id="mondayStart" />
+              <TimeSelector day="mondayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.mondayEnd} id="mondayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.tuesday ? <p></p> : 
+            <div>
+              <TimeSelector day="tuesdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.tuesdayStart} id="tuesdayStart" />
+              <TimeSelector day="tuesdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.tuesdayEnd} id="tuesdayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.wednesday ? <p></p> : 
+            <div>
+              <TimeSelector day="wednesdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.wednesdayStart} id="wednesdayStart" />
+              <TimeSelector day="wednesdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.wednesdayEnd} id="wednesdayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.thursday ? <p></p> : 
+            <div>
+              <TimeSelector day="thursdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.thursdayStart} id="thursdayStart" />
+              <TimeSelector day="thursdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.thursdayEnd} id="thursdayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.friday ? <p></p> : 
+            <div>
+              <TimeSelector day="fridayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.fridayStart} id="fridayStart" />
+              <TimeSelector day="fridayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.fridayEnd} id="fridayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.saturday ? <p></p> : 
+            <div>
+              <TimeSelector day="saturdayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.saturdayStart} id="saturdayStart" />
+              <TimeSelector day="saturdayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.saturdayEnd} id="saturdayEnd" />
+            </div>
+          }
+          {!this.state.selectedDays.sunday ? <p></p> : 
+            <div>
+              <TimeSelector day="sundayStart" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.sundayStart} id="sundayStart" />
+              <TimeSelector day="sundayEnd" onTimeChange={this.changefirstTime} selectedTime={this.state.selectedDays.sundayEnd} id="sundayEnd" />
+            </div>
+          }    
         </span>
 
         <br></br>
