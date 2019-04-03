@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ControlledCarousel from '../ControlledCarousel'
-import axios from 'axios'
 
 class NextGames extends Component{
   state = {
@@ -11,18 +10,19 @@ class NextGames extends Component{
 
   componentDidMount(){
     console.log("hello")
-    axios.get('http://localhost:3000/api/users/1/next_games',{
-      user: 1 
-    })
-    .then((response) => {
-      this.setState({
-        data: response.data,
-        loaded: true
+    fetch('http://localhost:3000/api/users/1/next_games', 
+      {
+        mode: 'cors', 
+        credentials: 'include'
       })
-      console.log(response.data)
-      console.log(this.state)
-    })
-  }
+      .then(resp => resp.json())
+      .then(json => {
+        this.setState({
+          data: json,
+          loaded:true
+        })
+      });
+  } 
   
 
   render(){
