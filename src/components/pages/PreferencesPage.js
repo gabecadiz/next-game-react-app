@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import DateScheduler from '../DateScheduler'
-import DistanceSlider from '../DistanceSlider'
+
 
 
 class PreferencesPage extends Component{
   state={
     distance: 20,
     sports: null,
-    startDate: new Date(),
-    endDate: new Date(),
     currentLocation: {lat: null, lng: null},
-    loadedLocation: false
-  }
-
+    loadedLocation: false,
+    selectedDays: {
+      monday: false,
+      tuesday: false,
+      wednesday: false,
+      thursday: false,
+      friday: false,
+      saturday: false,
+      sunday: false,
+  },
+    // selectedDays: [
+    //   {monday: false},
+    //   {tuesday: false},
+    //   {wednesday: false},
+    //   {thursday: false},
+    //   {friday: false},
+    //   {saturday: false},
+    //   {sunday: false},
+    // ],
+    firstTime: new Date().toLocaleString(),
+    secondTime: new Date().toLocaleString()
+  };
+  
   componentDidMount(){
+    console.log(this.state)
     navigator.geolocation.getCurrentPosition(location => {
       this.setState({
         currentLocation: {
@@ -23,42 +42,50 @@ class PreferencesPage extends Component{
         loadedLocation: true
       })
     })
-    }
+    };
 
   handleChange = (e) => {
     this.setState({
       distance: parseInt(e.target.value)
     })
-  }
+  };
 
   changeStartDate = (date) => {
     this.setState({
       startDate: date,
       endDate: date
     });
-  }
+  };
 
   changeEndDate = (date) => {
     this.setState({
       endDate: date
     });
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addPreferences(this.state)
     console.log(this.state)
-  }
+  };
 
   changeSport = (e) => {
     this.setState({
       sports: e.map(e => e.value)
     })
-  }
+};
+
+checkChange = (e) => {
+  console.log(e.target.value)
+  let day = e.target.value;
+  let i = e.target.id;
+  this.setState({selectedDays: { ...this.state.selectedDays, [day]: !this.state.selectedDays[day]}})
+}
+
 
 
   render(props){
-
+console.log(this.state.selectedDays)
     return(
       <div>
         { !this.state.loadedLocation ? <p>LOADING CURRENT LOCATION...</p> : <p> CURRENT LOCATION LOADED </p>}
@@ -72,6 +99,36 @@ class PreferencesPage extends Component{
         <SportSelector changeSport={this.changeSport}/>
         <br></br>
         <h6>When?</h6>
+        <span className="ck-button">
+        <label><input type="checkbox" value='monday' defaultChecked={this.state.selectedDays.monday} onChange={this.checkChange}/><span>Monday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='tuesday' defaultChecked={this.state.selectedDays.tuesday} onChange={this.checkChange}/><span>Tuesday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='wednesday' defaultChecked={this.state.selectedDays.wednesday} onChange={this.checkChange}/><span>Wednesday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='thursday' defaultChecked={this.state.selectedDays.thursday} onChange={this.checkChange}/><span>Thursday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='friday' defaultChecked={this.state.selectedDays.friday} onChange={this.checkChange}/><span>Friday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='saturday' defaultChecked={this.state.selectedDays.saturday} onChange={this.checkChange}/><span>Saturday</span>
+        </label>
+        </span>
+        <span className="ck-button">
+        <label><input type="checkbox" value='sunday' defaultChecked={this.state.selectedDays.sunday} onChange={this.checkChange}/><span>Sunday</span>
+        </label>
+        </span>
+        <span>
+          <p>Between: </p>
         <DateScheduler 
           startDate={this.state.startDate} 
           changeDate={this.changeStartDate}
@@ -82,17 +139,8 @@ class PreferencesPage extends Component{
           changeDate={this.changeEndDate}
           minDate={this.state.startDate}
         />
+        </span>
 
-        <br></br>
-        <br></br>
-        <h6>How far?</h6>
-
-        <br></br>
-
-        <DistanceSlider 
-          distance={this.state.distance} 
-          handleChange={this.handleChange}
-        />
         <br></br>
         <button type="submit" className="btn btn-primary">Find My Next Game</button>
 

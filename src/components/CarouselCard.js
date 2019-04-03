@@ -5,11 +5,12 @@ class CarouselCard extends Component{
     render(){
         return(
             <div className="next-game-card">
-                  <p>{this.props.locationData.sport}</p>
-                  <p>{this.props.locationData.time}</p>
-                  <p>{this.props.locationData.name}</p>
-                  <p>Number of People TO BE IMPLEMENTED</p>
-                  <img className="next-game-image" src="http://www.tourismfredericton.ca/sites/default/files/styles/full_node/public/images/directory/odell_park_1_0.jpg?itok=QAYzoWTG" alt="Example Park" />
+                  <p><strong>Sport: </strong>{this.props.locationData.sport}</p>
+                  <p><strong>Date: </strong>{this.props.locationData.date}</p>
+                  <p><strong>Time: </strong>{this.props.locationData.time}</p>
+                  <p><strong>Facility: </strong>{this.props.locationData.facility}</p>
+                  <p><strong>Number of People:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
+                  <img className="next-game-image" src={this.props.locationData.image} alt="Example Park" />
           <GoogleMapComponent location={this.props.locationData.location}/>
           </div>
         )
