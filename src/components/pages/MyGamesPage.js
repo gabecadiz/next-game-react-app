@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ExampleAccordion from '../ExampleAccordion'
-import axios from 'axios'
 
 
 class MyGames extends Component{
@@ -12,25 +11,24 @@ class MyGames extends Component{
 
 
   componentDidMount(){
-    console.log("hello")
-    axios.get('http://localhost:3000/api/users/1/games',{
-      user: 1 
+    fetch('http://localhost:3000/api/users/1/games', 
+    {
+      mode: 'cors', 
+      credentials: 'include'
     })
-    .then((response) => {
+    .then(resp => resp.json())
+    .then(json => {
       this.setState({
-        data: response.data,
-        loaded: true
+        data: json,
+        loaded:true
       })
-      console.log(response.data)
-      console.log(this.state)
-    })
+    });
   }
 
   render(){
     
     return(
         <div>
-          {/* <p>hi</p> */}
          { !this.state.loaded ? <p> LOADING</p> : <ExampleAccordion savedGames = {this.state.data}/> }
         </div>
     )
