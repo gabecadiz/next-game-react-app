@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import TimeSelector from '../TimeSelector'
+import DaySelector from '../DaySelector'
 
 
 class PreferencesPage extends Component{
@@ -70,6 +71,7 @@ class PreferencesPage extends Component{
 
 checkChange = (e) => {
   let day = e.target.value;
+  console.log(e.target.value)
   this.setState({selectedDays: { ...this.state.selectedDays, [day]: !this.state.selectedDays[day]}})
 }
 
@@ -89,34 +91,15 @@ checkChange = (e) => {
         <SportSelector changeSport={this.changeSport}/>
         <br></br>
         <h6>When?</h6>
-        <span className="ck-button">
-        <label><input type="checkbox" value='monday' defaultChecked={this.state.selectedDays.monday} onChange={this.checkChange}/><span>Monday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='tuesday' defaultChecked={this.state.selectedDays.tuesday} onChange={this.checkChange}/><span>Tuesday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='wednesday' defaultChecked={this.state.selectedDays.wednesday} onChange={this.checkChange}/><span>Wednesday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='thursday' defaultChecked={this.state.selectedDays.thursday} onChange={this.checkChange}/><span>Thursday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='friday' defaultChecked={this.state.selectedDays.friday} onChange={this.checkChange}/><span>Friday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='saturday' defaultChecked={this.state.selectedDays.saturday} onChange={this.checkChange}/><span>Saturday</span>
-        </label>
-        </span>
-        <span className="ck-button">
-        <label><input type="checkbox" value='sunday' defaultChecked={this.state.selectedDays.sunday} onChange={this.checkChange}/><span>Sunday</span>
-        </label>
-        </span>
+        <div>
+        <DaySelector value="monday" day="Monday" defaultChecked={this.state.selectedDays.monday} onChange={this.checkChange} />
+        <DaySelector value="tuesday" day="Tuesday" defaultChecked={this.state.selectedDays.tuesday} onChange={this.checkChange} />
+        <DaySelector value="wednesday" day="Wednesday" defaultChecked={this.state.selectedDays.wednesday} onChange={this.checkChange} />
+        <DaySelector value="thursday" day="Thursday" defaultChecked={this.state.selectedDays.thursday} onChange={this.checkChange} />
+        <DaySelector value="friday" day="Friday" defaultChecked={this.state.selectedDays.friday} onChange={this.checkChange} />
+        <DaySelector value="saturday" day="Saturday" defaultChecked={this.state.selectedDays.saturday} onChange={this.checkChange} />
+        <DaySelector value="sunday" day="Sunday" defaultChecked={this.state.selectedDays.sunday} onChange={this.checkChange} />
+        </div>
         <div>
           <p>Between:</p>
         </div>

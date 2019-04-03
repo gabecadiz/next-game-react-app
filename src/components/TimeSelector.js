@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TimePickerWrapper from 'react-times';
+import TimePicker from 'react-times';
 import '../time-picker.css'
 
 
@@ -14,7 +14,7 @@ class TimeSelector extends Component{
 
     
     return(
-        <TimePickerWrapper theme="classic" onTimeChange={this.saveTime} time={this.props.selectedTime} />
+        <TimePicker onTimeChange={this.saveTime} theme="dark" time={this.props.selectedTime} />
     )
   }
 
