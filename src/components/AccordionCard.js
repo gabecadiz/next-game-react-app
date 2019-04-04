@@ -13,7 +13,7 @@ class AccordionCard extends Component{
                   <p><strong>Date:</strong> {this.props.locationData.date}</p>
                   <p><strong>How Many Other Players:</strong> {this.props.locationData.other_players}</p>
                   <img className="next-game-image" src={this.props.locationData.image} alt="Example Park" />
-          <p><strong>Location:</strong></p>
+          <p><strong>Location: </strong>{this.props.locationData.facility}</p>
           <GoogleMapComponent location={this.props.locationData.location}/>
           </div>
         )
