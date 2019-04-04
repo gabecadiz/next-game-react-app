@@ -34,8 +34,8 @@ class LoginPage extends Component {
 
     }).then(r => {
       if(r.status === 200){
-        this.props.history.push("/nextgames");
         this.props.handleLoginStatus()
+        this.props.history.push("/nextgames");
       } else{
         alert("Invalid Login")
         this.props.history.push("/login")

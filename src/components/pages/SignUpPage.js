@@ -105,8 +105,8 @@ class SignUpPage extends Component{
       }
     }).then(r => {
       if(r.status === 200){
-        this.props.history.push("/nextgames");
         this.props.handleLoginStatus()
+        this.props.history.push("/nextgames");
       } else{
         alert("Invalid Signup")
         this.props.history.push("/signup")
