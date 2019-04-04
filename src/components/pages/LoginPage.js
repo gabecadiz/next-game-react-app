@@ -32,10 +32,13 @@ class LoginPage extends Component {
         'Content-Type': 'application/json'
       }
 
-    }).then(r => {
+    })
+    .then(r => {
       if(r.status === 200){
-        this.props.handleLoginStatus()
-        this.props.history.push("/nextgames");
+        r.json().then( data => {
+          this.props.handleLoginStatus(data.id)
+          this.props.history.push("/nextgames");
+        })
       } else{
         alert("Invalid Login")
         this.props.history.push("/login")

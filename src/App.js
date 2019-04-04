@@ -14,43 +14,34 @@ import './App.css';
 class App extends Component {
   state = {
     loggedIn: false,
-    distance: null,
     sports: null,
-    currentLocation: { lat: 43.64434, lng: -79.401984 }
+    currentLocation: { lat: null, lng: null },
+    userId: null
   }
 
-dummyLocations = () => {
-  const currentTime = new Date()
-  return (
-    [
-      {location: {lat: 43.6537, lng: -79.3930} , name: "Grange Park", sport: "Basketball", time: currentTime.toString()},
-      {location: {lat: 43.6324, lng: -79.4095}, name: "Inukshuk Park", sport: "Baseball", time: currentTime.toString()},
-      {location: {lat: 43.6700, lng: -79.3917}, name: "Village of Yorkville Park", sport: "Volleyball", time: currentTime.toString()} 
-    ]
-  )
-}
+  handleLoginStatus = (idNum) => {
+    this.setState({
+      loggedIn: true,
+      userId: idNum
+    })
+  }
 
-handleLoginStatus = () => {
-  this.setState({
-    loggedIn: true
-  })
-}
-handleLogoutStatus = () => {
-  this.setState({
-    loggedIn: false
-  })
-}
+  handleLogoutStatus = () => {
+    this.setState({
+      loggedIn: false,
+      userId: null
+    })
+  }
 
-addPreferences = (preferences) => {
-  this.setState({
-    distance: preferences.distance,
-    sports: preferences.sports,
-    startDate: preferences.startDate,
-    endDate: preferences.endDate,
-    currentLocation: preferences.currentLocation,
-    locationsData: this.dummyLocations()
-  })
-}
+  addPreferences = (preferences) => {
+    this.setState({
+      distance: preferences.distance,
+      sports: preferences.sports,
+      startDate: preferences.startDate,
+      endDate: preferences.endDate,
+      currentLocation: preferences.currentLocation,
+    })
+  }
   render() {
     return (
      <Router>
@@ -63,15 +54,15 @@ addPreferences = (preferences) => {
                 render={(props) => (<SignUpPage {...props} handleLoginStatus={this.handleLoginStatus}/>)}
           />
           <Route path="/login" 
-                render={(props) => (<LoginPage {...props} handleLoginStatus={this.handleLoginStatus}/>)}
+                render={(props) => (<LoginPage {...props} handleLoginStatus={this.handleLoginStatus} />)}
           />
           <Route path ="/preferences" 
                  render={(props) => (this.state.loggedIn ? (<PreferencesPage {...props} addPreferences={this.addPreferences}/>) : (<Redirect to='/' />))}/>
           <Route path="/mygames" 
-                 render={(props) => (this.state.loggedIn ? (<MyGames {...props} locationsData={this.state.locationsData}/>) : (<Redirect to='/' />))}
+                 render={(props) => (this.state.loggedIn ? (<MyGames {...props} locationsData={this.state.locationsData} userId={this.state.userId}/>) : (<Redirect to='/' />))}
           />
           <Route path="/nextgames"
-                 render={(props) => (this.state.loggedIn ? (<NextGamePage {...props} locationsData={this.state.locationsData}
+                 render={(props) => (this.state.loggedIn ? (<NextGamePage {...props} locationsData={this.state.locationsData} userId={this.state.userId}
           />) : (<Redirect to='/' />))}
           />
         </div>

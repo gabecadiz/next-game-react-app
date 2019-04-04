@@ -11,7 +11,7 @@ class MyGames extends Component{
 
 
   componentDidMount(){
-    fetch('http://localhost:3000/api/users/1/games', 
+    fetch(`http://localhost:3000/api/users/${this.props.userId}/games`, 
     {
       mode: 'cors', 
       credentials: 'include'

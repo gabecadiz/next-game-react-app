@@ -13,8 +13,8 @@ class Header extends Component {
         'Content-Type': 'application/json'
       }
     }).then( () => {
-      this.props.history.push('/');
       this.props.handleLogoutStatus()
+      this.props.history.push('/');
     })
   }
 
