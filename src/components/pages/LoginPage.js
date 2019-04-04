@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 class LoginPage extends Component {
   state={
@@ -21,20 +20,27 @@ class LoginPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/login', {
-      username: this.state.username,
-      password: this.state.password,
-    }, {
-      headers: {
-        credentials: 'same-origin',
+    fetch('http://localhost:3000/login',{
+      mode: 'cors', 
+      credentials: 'include',
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password
+      }),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+
+    }).then(r => {
+      if(r.status === 200){
+        this.props.history.push("/nextgames");
+        this.props.handleLoginStatus()
+      } else{
+        alert("Invalid Login")
+        this.props.history.push("/login")
       }
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
 
   render(){

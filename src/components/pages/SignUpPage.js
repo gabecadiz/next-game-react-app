@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import DateScheduler from '../DateScheduler'
-import axios from 'axios'
 
 class SignUpPage extends Component{
   state={
@@ -88,6 +87,7 @@ class SignUpPage extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     // console.log(this.state)
 
     axios.post('http://localhost:3000/signup', {
@@ -106,10 +106,34 @@ class SignUpPage extends Component{
       console.log(response);
       return axios.get('http://localhost:3000/session', {withCredentials: true})
         .then(r => console.log("checking after", r))
+=======
+    fetch('http://localhost:3000/signup',{
+      mode: 'cors', 
+      credentials: 'include',
+      method: 'POST',
+      body: JSON.stringify({
+        user:{
+          image: this.state.avatar,
+          username: this.state.username,
+          email: this.state.email,
+          password: this.state.password,
+          password_confirmation: this.state.passwordConfirmation
+        }
+      }),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(r => {
+      if(r.status === 200){
+        this.props.history.push("/nextgames");
+        this.props.handleLoginStatus()
+      } else{
+        alert("Invalid Signup")
+        this.props.history.push("/signup")
+      }
+>>>>>>> 17a6870d2826412bbbc28cd2f9c76bcf58927aea
     })
-    .catch(function (error) {
-      console.log(error);
-    });
+    
   }
 
   render(){

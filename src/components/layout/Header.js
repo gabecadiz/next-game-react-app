@@ -1,18 +1,48 @@
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { Component } from 'react';
+import { Link, withRouter } from "react-router-dom"
 
-function Header(props){
-  return (
-    <header style={headerStyle}>
-      <h1 style={headerText}>Next Game</h1>
-      <Link style={linkStyle} to="/">Landing Page</Link> | 
-      <Link style={linkStyle} to="/preferences">Preferences</Link> | 
-      <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-      <Link style={linkStyle} to="/mygames"> MyGames </Link> |
-      <Link style={linkStyle} to="/signup"> Sign Up</Link> |
-      <Link style={linkStyle} to="/login"> Log In </Link>
-    </header>
-  )
+class Header extends Component {
+
+  handleLogout = (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3000/logout',{
+      mode: 'cors', 
+      credentials: 'include',
+      method: 'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then( () => {
+      this.props.history.push('/');
+      this.props.handleLogoutStatus()
+    })
+  }
+
+  render(){
+    return (
+      <header style={headerStyle}>
+        <h1 style={headerText}>Next Game</h1>
+        { this.props.loginStatus ? 
+        (  
+          <div>      
+            <button type="button" onClick ={this.handleLogout}className="btn btn-danger">Logout!</button>
+            <Link style={linkStyle} to="/preferences">Preferences</Link> | 
+            <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
+            <Link style={linkStyle} to="/mygames"> MyGames </Link> |
+          </div>
+        ) 
+          : 
+        (        
+        <div>
+          <Link style={linkStyle} to="/">Landing Page</Link> | 
+          <Link style={linkStyle} to="/signup"> Sign Up</Link> |
+          <Link style={linkStyle} to="/login"> Log In </Link>
+        </div>
+        )}
+
+      </header>
+    )
+  }
 }
 
 const headerStyle ={
@@ -39,4 +69,4 @@ const linkStyle = {
 }
 
 
-export default Header;
+export default withRouter(Header);
