@@ -31,13 +31,6 @@ class PreferencesPage extends Component{
     })
     };
 
-    // do we need this?
-  handleChange = (e) => {
-    this.setState({
-      distance: parseInt(e.target.value)
-    })
-  };
-
   changeSport = (e) => {
     this.setState({
       sports: e.map(e => e.value)
