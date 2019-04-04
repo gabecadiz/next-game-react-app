@@ -33,15 +33,13 @@ class App extends Component {
     })
   }
 
-  addPreferences = (preferences) => {
-    this.setState({
-      distance: preferences.distance,
-      sports: preferences.sports,
-      startDate: preferences.startDate,
-      endDate: preferences.endDate,
-      currentLocation: preferences.currentLocation,
-    })
-  }
+addPreferences = (preferences) => {
+  this.setState({
+    sports: preferences.sports,
+    currentLocation: preferences.currentLocation,
+    selectedDays: preferences.selectedDays,
+  })
+}
   render() {
     return (
      <Router>

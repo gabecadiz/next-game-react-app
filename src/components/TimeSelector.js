@@ -4,9 +4,7 @@ import React, { Component } from 'react';
     let now = new Date();
     let hour = now.getHours();
     let minutes = now.getMinutes();
-    if (minutes < 15) {
-        minutes = "00";
-    } else if (minutes < 45){
+    if (minutes > 0 && minutes < 30) {
         minutes = "30";
     } else {
         minutes = "00";
@@ -26,7 +24,7 @@ class TimeSelector extends Component{
     
     return(
         // <TimePicker onTimeChange={this.saveTime} theme="classic" time={this.props.selectedTime} />
-        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={getNearestHalfHourTimeString()} id={this.props.day}>
+        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={this.props.defaultValue || getNearestHalfHourTimeString()} id={this.props.id}>
             <option value="00:00">00:00</option>
             <option value="00:30">00:30</option>
             <option value="01:00">01:00</option>
