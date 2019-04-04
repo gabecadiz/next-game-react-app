@@ -3,6 +3,9 @@ import Select from 'react-select';
 
 class SportSelector extends Component{
   render(){
+
+    const sports = [{value: 'basketball', label: 'Basketball'}, {value: 'volleyball', label: 'Volleyball'}]
+
     const sportOptions = [
       { value: 'basketball', label: 'Basketball' },
       { value: 'volleyball', label: 'Volleyball'  },
@@ -13,7 +16,7 @@ class SportSelector extends Component{
     return(
         <Select
           onChange={this.props.changeSport}
-          defaultValue={{value: 'basketball', label: 'Basketball'}}
+          defaultValue={sports}
           isMulti
           name="colors"
           options= {sportOptions}

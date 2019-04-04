@@ -14,21 +14,10 @@ import './App.css';
 class App extends Component {
   state = {
     loggedIn: false,
-    distance: null,
     sports: null,
     currentLocation: { lat: 43.64434, lng: -79.401984 }
   }
 
-dummyLocations = () => {
-  const currentTime = new Date()
-  return (
-    [
-      {location: {lat: 43.6537, lng: -79.3930} , name: "Grange Park", sport: "Basketball", time: currentTime.toString()},
-      {location: {lat: 43.6324, lng: -79.4095}, name: "Inukshuk Park", sport: "Baseball", time: currentTime.toString()},
-      {location: {lat: 43.6700, lng: -79.3917}, name: "Village of Yorkville Park", sport: "Volleyball", time: currentTime.toString()} 
-    ]
-  )
-}
 
 handleLoginStatus = () => {
   this.setState({
@@ -43,12 +32,10 @@ handleLogoutStatus = () => {
 
 addPreferences = (preferences) => {
   this.setState({
-    distance: preferences.distance,
     sports: preferences.sports,
     startDate: preferences.startDate,
     endDate: preferences.endDate,
     currentLocation: preferences.currentLocation,
-    locationsData: this.dummyLocations()
   })
 }
   render() {
