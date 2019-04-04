@@ -6,9 +6,8 @@ import DaySelector from '../DaySelector'
 
 class PreferencesPage extends Component{
   state={
-    sports: null,
-    currentLocation: {lat: null, lng: null},
-    loadedLocation: false,
+    // currentLocation: {lat: null, lng: null},
+    // loadedLocation: false,
     selectedDays: {
       monday: false,
       tuesday: false,
@@ -17,21 +16,38 @@ class PreferencesPage extends Component{
       friday: false,
       saturday: false,
       sunday: false,
-  },
+    },
+    sports: null
   };
   
   componentDidMount(){
-    navigator.geolocation.getCurrentPosition(location => {
-      this.setState({
-        currentLocation: {
-          lat: parseFloat(location.coords.latitude.toFixed(8)), lng: parseFloat(location.coords.longitude.toFixed(8))
-        },
-        loadedLocation: true
-      })
+    fetch(`http://localhost:3000/api/users/${this.props.userId}/preferences`,
+    {
+      mode: 'cors',
+      credentials: 'include'
     })
-    };
+    .then(resp => resp.json())
+    .then(json => {
+      this.setState({
+        selectedDays: json.selectedDays,
+        sports: json.sports
+      })
+      console.log(this.state)
+    })
+  };
+
+    // navigator.geolocation.getCurrentPosition(location => {
+    //   this.setState({
+    //     currentLocation: {
+    //       lat: parseFloat(location.coords.latitude.toFixed(8)), lng: parseFloat(location.coords.longitude.toFixed(8))
+    //     },
+    //     loadedLocation: true
+    //   })
+    // })
+    // };
 
   changeSport = (e) => {
+    console.log(e)
     this.setState({
       sports: e.map(e => e.value)
     })
@@ -52,14 +68,13 @@ class PreferencesPage extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addPreferences(this.state)
-    fetch('http://localhost:3000/signup',{
+    fetch(`http://localhost:3000/api/users/${this.props.userId}/preferences`,{
       mode: 'cors', 
       credentials: 'include',
-      method: 'POST',
+      method: 'PUT',
       body: JSON.stringify({
-        user:{
+        prefs:{
           sports: this.state.sports,
-          currentLocation: this.state.currentLocation,
           selectedDays: this.state.selectedDays,
         }
       }),
@@ -70,19 +85,19 @@ class PreferencesPage extends Component{
       this.props.history.push('/nextgames');
     });
   };
+  
 
-  render(props){
+  render(){
     console.log(this.state)
     return(
       <div>
-        { !this.state.loadedLocation ? <p>LOADING CURRENT LOCATION...</p> : <p> CURRENT LOCATION LOADED </p>}
         <h1>User image</h1>
         <h4>Username</h4>
         <br></br>
         <h1>Preferences</h1>
        <form onSubmit={this.handleSubmit}>
         <h6>Select your sport</h6>
-        <SportSelector changeSport={this.changeSport}/>
+        <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
         <br></br>
         <h6>When?</h6>
         <div>
@@ -102,7 +117,7 @@ class PreferencesPage extends Component{
           {!this.state.selectedDays.monday ? <p></p> : 
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.mondayStart || undefined} selectedTime={this.state.selectedDays.mondayStart} id="mondayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.mondayStart} selectedTime={this.state.selectedDays.mondayStart} id="mondayStart" />
               <h6>To</h6>
                 <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.mondayEnd || undefined} selectedTime={this.state.selectedDays.mondayEnd} id="mondayEnd" />
             </div>
