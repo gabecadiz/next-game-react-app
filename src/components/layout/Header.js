@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 
 class Header extends Component {
 
@@ -12,6 +12,9 @@ class Header extends Component {
       headers:{
         'Content-Type': 'application/json'
       }
+    }).then( () => {
+      this.props.history.push('/');
+      this.props.handleLogoutStatus()
     })
   }
 
@@ -19,13 +22,24 @@ class Header extends Component {
     return (
       <header style={headerStyle}>
         <h1 style={headerText}>Next Game</h1>
-        <button type="button" onClick ={this.handleLogout}className="btn btn-danger">Logout!</button>
-        <Link style={linkStyle} to="/">Landing Page</Link> | 
-        <Link style={linkStyle} to="/preferences">Preferences</Link> | 
-        <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-        <Link style={linkStyle} to="/mygames"> MyGames </Link> |
-        <Link style={linkStyle} to="/signup"> Sign Up</Link> |
-        <Link style={linkStyle} to="/login"> Log In </Link>
+        { this.props.loginStatus ? 
+        (  
+          <div>      
+            <button type="button" onClick ={this.handleLogout}className="btn btn-danger">Logout!</button>
+            <Link style={linkStyle} to="/preferences">Preferences</Link> | 
+            <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
+            <Link style={linkStyle} to="/mygames"> MyGames </Link> |
+          </div>
+        ) 
+          : 
+        (        
+        <div>
+          <Link style={linkStyle} to="/">Landing Page</Link> | 
+          <Link style={linkStyle} to="/signup"> Sign Up</Link> |
+          <Link style={linkStyle} to="/login"> Log In </Link>
+        </div>
+        )}
+
       </header>
     )
   }
@@ -55,4 +69,4 @@ const linkStyle = {
 }
 
 
-export default Header;
+export default withRouter(Header);

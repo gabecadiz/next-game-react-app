@@ -103,8 +103,16 @@ class SignUpPage extends Component{
       headers:{
         'Content-Type': 'application/json'
       }
-
+    }).then(r => {
+      if(r.status === 200){
+        this.props.history.push("/nextgames");
+        this.props.handleLoginStatus()
+      } else{
+        alert("Invalid Signup")
+        this.props.history.push("/signup")
+      }
     })
+    
   }
 
   render(){

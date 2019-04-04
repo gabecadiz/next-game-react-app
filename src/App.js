@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from "./components/layout/Header";
 import MyGames from "./components/pages/MyGamesPage";
 import PreferencesPage from "./components/pages/PreferencesPage"
@@ -13,6 +13,7 @@ import './App.css';
 
 class App extends Component {
   state = {
+    loggedIn: false,
     distance: null,
     sports: null,
     currentLocation: { lat: 43.64434, lng: -79.401984 }
@@ -29,6 +30,17 @@ dummyLocations = () => {
   )
 }
 
+handleLoginStatus = () => {
+  this.setState({
+    loggedIn: true
+  })
+}
+handleLogoutStatus = () => {
+  this.setState({
+    loggedIn: false
+  })
+}
+
 addPreferences = (preferences) => {
   this.setState({
     distance: preferences.distance,
@@ -43,20 +55,24 @@ addPreferences = (preferences) => {
     return (
      <Router>
         <div className="App">
-          <Header/>
+          <Header handleLogoutStatus={this.handleLogoutStatus} loginStatus={this.state.loggedIn}/>
           <Route exact path = "/" render={props => (
             <LandingPage/>
           )} />
-          <Route path="/signup" component={SignUpPage} />
-          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" 
+                render={(props) => (<SignUpPage {...props} handleLoginStatus={this.handleLoginStatus}/>)}
+          />
+          <Route path="/login" 
+                render={(props) => (<LoginPage {...props} handleLoginStatus={this.handleLoginStatus}/>)}
+          />
           <Route path ="/preferences" 
-                 render={(props) => (<PreferencesPage {...props} addPreferences={this.addPreferences}/>)}/>
+                 render={(props) => (this.state.loggedIn ? (<PreferencesPage {...props} addPreferences={this.addPreferences}/>) : (<Redirect to='/' />))}/>
           <Route path="/mygames" 
-                 render={(props) => (<MyGames {...props} locationsData={this.state.locationsData}/>)}
+                 render={(props) => (this.state.loggedIn ? (<MyGames {...props} locationsData={this.state.locationsData}/>) : (<Redirect to='/' />))}
           />
           <Route path="/nextgames"
-                 render={(props) => (<NextGamePage {...props} locationsData={this.state.locationsData}
-          />)}
+                 render={(props) => (this.state.loggedIn ? (<NextGamePage {...props} locationsData={this.state.locationsData}
+          />) : (<Redirect to='/' />))}
           />
         </div>
       </Router>
