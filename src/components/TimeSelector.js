@@ -1,20 +1,5 @@
 import React, { Component } from 'react';
 
-    const getNearestHalfHourTimeString = function() {
-    let now = new Date();
-    let hour = now.getHours();
-    let minutes = now.getMinutes();
-    if (minutes > 0 && minutes < 30) {
-        minutes = "30";
-    } else {
-        minutes = "00";
-        ++hour;
-    }
-
-    return(hour + ":" + minutes);
-    }
-
-
 class TimeSelector extends Component{
     
     
@@ -24,7 +9,8 @@ class TimeSelector extends Component{
     
     return(
         // <TimePicker onTimeChange={this.saveTime} theme="classic" time={this.props.selectedTime} />
-        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={getNearestHalfHourTimeString()} id={this.props.id}>
+        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={""} id={this.props.id}>
+            <option value=""></option>
             <option value="00:00">00:00</option>
             <option value="00:30">00:30</option>
             <option value="01:00">01:00</option>

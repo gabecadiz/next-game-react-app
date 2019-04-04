@@ -93,7 +93,7 @@ a{
   top:-20px;
 }
 
-/* .ck-button input:checked + span {
+.ck-button input:checked + span {
   background-color:rgb(18, 48, 185);
   color:#fff;
-} */
+}

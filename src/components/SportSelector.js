@@ -32,6 +32,7 @@ class SportSelector extends Component{
           options= {sportOptions}
           className="basic-multi-select"
           classNamePrefix="select"
+          id={Math.random()}
         />
     )
   }

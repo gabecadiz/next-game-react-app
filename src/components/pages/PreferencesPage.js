@@ -101,13 +101,13 @@ class PreferencesPage extends Component{
         <br></br>
         <h6>When?</h6>
         <div>
-          <DaySelector value="monday" day="Monday" defaultChecked={this.state.selectedDays.monday} onChange={this.selectDay} />
-          <DaySelector value="tuesday" day="Tuesday" defaultChecked={this.state.selectedDays.tuesday} onChange={this.selectDay} />
-          <DaySelector value="wednesday" day="Wednesday" defaultChecked={this.state.selectedDays.wednesday} onChange={this.selectDay} />
-          <DaySelector value="thursday" day="Thursday" defaultChecked={this.state.selectedDays.thursday} onChange={this.selectDay} />
-          <DaySelector value="friday" day="Friday" defaultChecked={this.state.selectedDays.friday} onChange={this.selectDay} />
-          <DaySelector value="saturday" day="Saturday" defaultChecked={this.state.selectedDays.saturday} onChange={this.selectDay} />
-          <DaySelector value="sunday" day="Sunday" defaultChecked={this.state.selectedDays.sunday} onChange={this.selectDay} />
+          <DaySelector value="monday" day="Monday" selected="Monday" checked={this.state.selectedDays.monday} defaultChecked={this.state.selectedDays.monday} onChange={this.selectDay} />
+          <DaySelector value="tuesday" day="Tuesday" checked={this.state.selectedDays.tuesday} defaultChecked={this.state.selectedDays.tuesday} onChange={this.selectDay} />
+          <DaySelector value="wednesday" day="Wednesday" checked={this.state.selectedDays.wednesday} defaultChecked={this.state.selectedDays.wednesday} onChange={this.selectDay} />
+          <DaySelector value="thursday" day="Thursday" checked={this.state.selectedDays.thursday} defaultChecked={this.state.selectedDays.thursday} onChange={this.selectDay} />
+          <DaySelector value="friday" day="Friday" checked={this.state.selectedDays.friday} defaultChecked={this.state.selectedDays.friday} onChange={this.selectDay} />
+          <DaySelector value="saturday" day="Saturday" checked={this.state.selectedDays.saturday} defaultChecked={this.state.selectedDays.saturday} onChange={this.selectDay} />
+          <DaySelector value="sunday" day="Sunday" checked={this.state.selectedDays.sunday} defaultChecked={this.state.selectedDays.sunday} onChange={this.selectDay} />
         </div>
         <span>
           <div>

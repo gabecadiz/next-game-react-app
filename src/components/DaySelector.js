@@ -8,8 +8,8 @@ class DaySelector extends Component{
 
     
     return(
-        <span className="ck-button" style={{ "backgroundColor": this.props.defaultChecked ? "rgb(18, 48, 185)" : "" }}>
-        <label><input type="checkbox" value={this.props.value} defaultChecked={this.props.defaultChecked} onChange={this.props.onChange}/><span>{this.props.day}</span>
+        <span className="ck-button">
+        <label><input type="checkbox" value={this.props.value} checked={this.props.checked} defaultChecked={this.props.defaultChecked} onChange={this.props.onChange}/><span>{this.props.day}</span>
         </label>
         </span>
     )
