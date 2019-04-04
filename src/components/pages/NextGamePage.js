@@ -9,8 +9,9 @@ class NextGames extends Component{
 
 
   componentDidMount(){
-    console.log("hello")
-    fetch('http://localhost:3000/api/users/1/next_games', 
+    console.log(this.props.userId)
+    
+    fetch(`http://localhost:3000/api/users/${this.props.userId}/next_games`, 
       {
         mode: 'cors', 
         credentials: 'include'
