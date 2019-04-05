@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CardStack, Card } from 'react-cardstack';
-import CarouselCard from '../NextGameCard'
+import NextGameCard from '../NextGameCard'
 
 
 
@@ -51,9 +51,9 @@ class NextGames extends Component{
       background='#f8f8f8'
       hoverOffset={25}>
 
-      {this.state.data.map ( (locationData, i ) =>    
-        <Card>
-           <CarouselCard key={i} locationData={locationData} userId={this.props.userId}/>
+      {this.state.data.map ( (locationData, index) =>    
+        <Card key={index}>
+           <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId}/>
         </Card>
       )}
 
