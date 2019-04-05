@@ -39,7 +39,7 @@ class NextGames extends Component{
     
     return(
      <div>
-     { !this.state.loaded ? <p> LOADING</p> : <ControlledCarousel savedGames = {this.state.data}/> }
+     { !this.state.loaded ? <p> LOADING</p> : <ControlledCarousel savedGames={this.state.data} userId={this.props.userId}/> }
      </div>
     )
   }
