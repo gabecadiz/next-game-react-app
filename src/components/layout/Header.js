@@ -28,7 +28,7 @@ class Header extends Component {
             <button type="button" onClick ={this.handleLogout}className="btn btn-danger">Logout!</button>
             <Link style={linkStyle} to="/preferences">Preferences</Link> | 
             <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-            <Link style={linkStyle} to="/mygames"> MyGames </Link> |
+            <Link style={linkStyle} to="/mygames"> MyGames </Link> 
           </div>
         ) 
           : 
@@ -49,9 +49,8 @@ const headerStyle ={
   background: '#333',
   color: '#fff',
   textAlign: 'center',
-  padding: '1.2rem',
+  padding: '0.8rem',
   border: "2px solid #222",
-  margin: "0.5rem",
   overflow: "hidden"
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import CarouselCard from './CarouselCard'
+import CarouselCard from './NextGameCard'
 
 class ControlledCarousel extends Component {
     constructor(props, context) {
