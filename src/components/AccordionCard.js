@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import GoogleMapComponent from './GoogleMapComponent'
 
 class AccordionCard extends Component{
+
+    handleDeleteGame = (e) => {
+			e.preventDefault()
+			console.log(this.props.gameId)
+    }
+
+
     render(){
         return(
             <div className="next-game-card">
             {/* User should be able to remove saved game */}
-            <button className="btn btn primary">Remove</button>
+            <button className="btn btn primary" onClick={this.handleDeleteGame}>Remove</button>
             <br></br>
                   <p><strong>Sport:</strong> {this.props.locationData.sport}</p>
                   <p><strong>Starting Time:</strong> {this.props.locationData.time}</p>

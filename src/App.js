@@ -57,7 +57,7 @@ addPreferences = (preferences) => {
           <Route path ="/preferences" 
                  render={(props) => (this.state.loggedIn ? (<PreferencesPage {...props} addPreferences={this.addPreferences} userId={this.state.userId}/>) : (<Redirect to='/' />))}/>
           <Route path="/mygames" 
-                 render={(props) => (this.state.loggedIn ? (<MyGames {...props} locationsData={this.state.locationsData} userId={this.state.userId}/>) : (<Redirect to='/' />))}
+                 render={(props) => (this.state.loggedIn ? (<MyGames {...props}  userId={this.state.userId}/>) : (<Redirect to='/' />))}
           />
           <Route path="/nextgames"
                  render={(props) => (this.state.loggedIn ? (<NextGamePage {...props} locationsData={this.state.locationsData} userId={this.state.userId}

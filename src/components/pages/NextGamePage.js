@@ -49,7 +49,7 @@ class NextGames extends Component{
       height={600}
       width={'100vw'}
       background='#f8f8f8'
-      hoverOffset={25}>
+      hoverOffset={10}>
 
       {this.state.data.map ( (locationData, index) =>    
         <Card key={index}>
