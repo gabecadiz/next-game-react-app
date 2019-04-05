@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapComponent from './GoogleMapComponent'
 
-class CarouselCard extends Component{
+class NextGameCard extends Component{
     handleNewAdd = (e) => {
 			e.preventDefault()
 			console.log(this.props)
@@ -44,21 +44,55 @@ class CarouselCard extends Component{
     render(){
         return(
             <div className="next-game-card">
+						<header style={styles.cardHeader} >
+							<SportIcon imgSrc={this.props.locationData.image} />
+							<div style={styles.cardHeaderInfo}>
+								<span><strong>Sport: </strong>{this.props.locationData.sport}</span>
+								<span> <strong>Date: </strong>{this.props.locationData.date}</span>
+								<span><strong>Time: </strong>{this.props.locationData.time}</span>
+							</div>
+						</header>
                   {this.props.locationData.type === "active" ? 
                   <button type="button" className="btn btn-primary" onClick={this.handleActiveAdd}>Active Add </button> :
                   <button type="button" className="btn btn-primary" onClick={this.handleNewAdd}>New Add</button>
                   }
-                  <p><strong>Sport: </strong>{this.props.locationData.sport}</p>
-                  <p><strong>Date: </strong>{this.props.locationData.date}</p>
-                  <p><strong>Time: </strong>{this.props.locationData.time}</p>
+                  
                   <p><strong>Facility: </strong>{this.props.locationData.facility}</p>
                   <p><strong>Number of People:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
                   <p><strong>Distance: </strong>{this.props.locationData.dist}</p>
-                  <img className="next-game-image" src={this.props.locationData.image} alt="Example Park" />
+
           <GoogleMapComponent location={this.props.locationData.location}/>
           </div>
         )
     }
 }
+const styles = {
+	cardHeader: {
+		display: 'flex',
+		height: '150px',
+		width: '100%',
+		justifyContent: 'space-evenly',
+		alignItems: 'center',
+		padding: '4px 8px',
+		color: '#fff',
+		backgroundColor: '#7aa2e2'
+	},
+	cardHeaderInfo: {
+		display: 'flex',
+		flexDirection: 'column'
+	}
+}
 
-export default CarouselCard;
+const SportIcon = ({ imgSrc }) => (
+	<img
+		style={{
+			width: '100px',
+			height: '60px',
+			border: `3px solid black`,
+		}}
+		src={imgSrc}
+		alt="Sport Icon"
+	/>
+);
+
+export default NextGameCard;
