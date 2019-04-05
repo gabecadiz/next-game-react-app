@@ -119,55 +119,55 @@ class PreferencesPage extends Component{
               <h6>From</h6>
                 <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.mondayStart} selectedTime={this.state.selectedDays.mondayStart} id="mondayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.mondayEnd || undefined} selectedTime={this.state.selectedDays.mondayEnd} id="mondayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.mondayEnd} selectedTime={this.state.selectedDays.mondayEnd} id="mondayEnd" />
             </div>
           }
           {!this.state.selectedDays.tuesday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.tuesdayStart || undefined} selectedTime={this.state.selectedDays.tuesdayStart} id="tuesdayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.tuesdayStart} selectedTime={this.state.selectedDays.tuesdayStart} id="tuesdayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.tuesdayEnd || undefined} selectedTime={this.state.selectedDays.tuesdayEnd} id="tuesdayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.tuesdayEnd} selectedTime={this.state.selectedDays.tuesdayEnd} id="tuesdayEnd" />
             </div>
           }
           {!this.state.selectedDays.wednesday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.wednesdayStart || undefined} selectedTime={this.state.selectedDays.wednesdayStart} id="wednesdayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.wednesdayStart} selectedTime={this.state.selectedDays.wednesdayStart} id="wednesdayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.wednesdayEnd || undefined} selectedTime={this.state.selectedDays.wednesdayEnd} id="wednesdayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.wednesdayEnd} selectedTime={this.state.selectedDays.wednesdayEnd} id="wednesdayEnd" />
             </div>
           }
           {!this.state.selectedDays.thursday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.thursdayStart || undefined} selectedTime={this.state.selectedDays.thursdayStart} id="thursdayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.thursdayStart} selectedTime={this.state.selectedDays.thursdayStart} id="thursdayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.thursdayEnd || undefined} selectedTime={this.state.selectedDays.thursdayEnd} id="thursdayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.thursdayEnd} selectedTime={this.state.selectedDays.thursdayEnd} id="thursdayEnd" />
             </div>
           }
           {!this.state.selectedDays.friday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.fridayStart || undefined} selectedTime={this.state.selectedDays.fridayStart} id="fridayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.fridayStart} selectedTime={this.state.selectedDays.fridayStart} id="fridayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.fridayEnd || undefined} selectedTime={this.state.selectedDays.fridayEnd} id="fridayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.fridayEnd} selectedTime={this.state.selectedDays.fridayEnd} id="fridayEnd" />
             </div>
           }
           {!this.state.selectedDays.saturday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.saturdayStart || undefined} selectedTime={this.state.selectedDays.saturdayStart} id="saturdayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.saturdayStart} selectedTime={this.state.selectedDays.saturdayStart} id="saturdayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.saturdayEnd || undefined} selectedTime={this.state.selectedDays.saturdayEnd} id="saturdayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.saturdayEnd} selectedTime={this.state.selectedDays.saturdayEnd} id="saturdayEnd" />
             </div>
           }
           {!this.state.selectedDays.sunday ? <p></p> :
             <div>
               <h6>From</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.sundayStart || undefined} selectedTime={this.state.selectedDays.sundayStart} id="sundayStart" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.sundayStart} selectedTime={this.state.selectedDays.sundayStart} id="sundayStart" />
               <h6>To</h6>
-                <TimeSelector onTimeChange={this.changeTimePref} defaultValue={this.state.selectedDays.sundayEnd || undefined} selectedTime={this.state.selectedDays.sundayEnd} id="sundayEnd" />
+                <TimeSelector onTimeChange={this.changeTimePref} value={this.state.selectedDays.sundayEnd} selectedTime={this.state.selectedDays.sundayEnd} id="sundayEnd" />
             </div>
           }
         </span>

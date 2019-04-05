@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import ControlledCarousel from '../ControlledCarousel'
+import { CardStack, Card } from 'react-cardstack';
+import NextGameCard from '../NextGameCard'
+
+
 
 class NextGames extends Component{
   state = {
@@ -39,7 +42,25 @@ class NextGames extends Component{
     
     return(
      <div>
-     { !this.state.loaded ? <p> LOADING</p> : <ControlledCarousel savedGames={this.state.data} userId={this.props.userId}/> }
+     { !this.state.loaded ? 
+        <p> LOADING</p> 
+      : 
+      <CardStack
+      height={600}
+      width={'100vw'}
+      background='#f8f8f8'
+      hoverOffset={25}>
+
+      {this.state.data.map ( (locationData, index) =>    
+        <Card key={index}>
+           <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId}/>
+        </Card>
+      )}
+
+
+    </CardStack>
+    }
+
      </div>
     )
   }
