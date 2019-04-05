@@ -10,6 +10,7 @@ class CarouselCard extends Component{
                   <p><strong>Time: </strong>{this.props.locationData.time}</p>
                   <p><strong>Facility: </strong>{this.props.locationData.facility}</p>
                   <p><strong>Number of People:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
+                  <p><strong>Distance: </strong>{this.props.locationData.dist}</p>
                   <img className="next-game-image" src={this.props.locationData.image} alt="Example Park" />
           <GoogleMapComponent location={this.props.locationData.location}/>
           </div>
