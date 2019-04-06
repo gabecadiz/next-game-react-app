@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
-import ExampleAccordion from '../ExampleAccordion'
+import MyGamesAccordion from '../MyGamesAccordion'
 
 
 class MyGames extends Component{
 
   state = {
     data: [],
-    loaded: false
+    loaded: false,
   };
 
-
   componentDidMount(){
+    this.fetchGames()
+  }
+
+  changeLoadedStatus = () => {
+    this.setState({
+      loaded: false
+    })
+    this.fetchGames()
+  }
+
+  fetchGames = () => {
     fetch(`http://localhost:3000/api/users/${this.props.userId}/games`, 
     {
       mode: 'cors', 
@@ -29,7 +39,7 @@ class MyGames extends Component{
     
     return(
         <div>
-         { !this.state.loaded ? <p> LOADING</p> : <ExampleAccordion savedGames = {this.state.data}/> }
+         { !this.state.loaded ? <p> LOADING</p> : <MyGamesAccordion savedGames = {this.state.data} userId={this.props.userId} changeLoadedStatus={this.changeLoadedStatus}/> }
         </div>
     )
   }

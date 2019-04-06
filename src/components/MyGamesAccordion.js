@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AccordionCard from './AccordionCard'
+import MyGamesCard from './MyGamesCard'
 
 import {
     Accordion,
@@ -11,7 +11,7 @@ import {
 // Demo styles, see 'Styles' section below for some notes on use.
 import '../fancy-example.css';
 
-class ExampleAccordion extends Component{
+class MyGamesAccordion extends Component{
   render(){
     return(
       <Accordion>
@@ -23,7 +23,7 @@ class ExampleAccordion extends Component{
               <p>{locationData.time} - {locationData.date}</p>
             </AccordionItemTitle>
             <AccordionItemBody>
-              <AccordionCard gameId={locationData.id} locationData={locationData} />
+              <MyGamesCard gameId={locationData.id} locationData={locationData} userId={this.props.userId} changeLoadedStatus={this.props.changeLoadedStatus}/>
             </AccordionItemBody>
           </AccordionItem>
         )}
@@ -32,8 +32,4 @@ class ExampleAccordion extends Component{
   }
 }
 
-
-
-
-
-export default ExampleAccordion
+export default MyGamesAccordion
