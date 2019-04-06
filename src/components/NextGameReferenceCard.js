@@ -5,7 +5,7 @@ class NextGameReferenceCard extends Component{
 
     render(){
         return(
-            <div>
+            <div className="next-game-header">
                 {/* <img src={this.props.locationData.image} alt="sports"/> */}
                 <p>{this.props.locationData.sport}</p>
                 <p>{this.props.locationData.date}</p>
