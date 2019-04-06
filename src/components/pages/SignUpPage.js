@@ -13,7 +13,8 @@ class SignUpPage extends Component{
       sports: [],
       currentLocation: {lat: null, lng: null},
       loadedLocation: false,
-      sportsEmpty: true
+      sportsEmpty: true,
+      incompleteForm: false
   }
 
   componentDidMount(){
@@ -108,42 +109,52 @@ class SignUpPage extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:3000/signup',{
-      mode: 'cors',
-      credentials: 'include',
-      method: 'POST',
-      body: JSON.stringify({
-        user:{
-          image: this.state.avatar,
-          username: this.state.username,
-          email: this.state.email,
-          password: this.state.password,
-          password_confirmation: this.state.passwordConfirmation,
-        },
-        sports: this.state.sports
-      }),
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }).then(r => {
-      if(r.status === 200){
-        r.json().then( data => {
-          this.props.handleLoginStatus(data.id)
-          this.props.history.push("/nextgames");
-        })
-      } else{
-        alert("Invalid Signup")
-        this.props.history.push("/signup")
-      }
-    })
+    if (this.formChecker()) {
+      fetch('http://localhost:3000/signup',{
+        mode: 'cors',
+        credentials: 'include',
+        method: 'POST',
+        body: JSON.stringify({
+          user:{
+            image: this.state.avatar,
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password,
+            password_confirmation: this.state.passwordConfirmation,
+          },
+          sports: this.state.sports
+        }),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }).then(r => {
+        if(r.status === 200){
+          r.json().then( data => {
+            this.props.handleLoginStatus(data.id)
+            this.props.history.push("/nextgames");
+          })
+        } else{
+          alert("Invalid Signup")
+          this.props.history.push("/signup")
+        }
+      })
 
+    } else {
+      this.setState({
+        incompleteForm: true
+      })
+    }
   }
 
   render(){
     return(
       <div>
+        { this.state.incompleteForm ?  
+          <Alert variant="info">  Please fill out the form completely! </Alert> 
+        : 
+          <span></span>
+        }
         <form onSubmit={this.handleSubmit}>
-          { !this.state.loadedLocation ? <p>LOADING CURRENT LOCATION...</p> : <p> CURRENT LOCATION LOADED </p>}
 
         <label>
           <p>Enter your username:</p>
@@ -170,12 +181,8 @@ class SignUpPage extends Component{
         <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
         <br></br>
 
-        { !this.formChecker() ? 
-         <Alert variant="info">  Please fill out the form completely! </Alert> 
-          : 
           <button type="submit" className="btn btn-primary">Sign Up</button> 
-        }
-        
+                
         </form>
       </div>
     )
