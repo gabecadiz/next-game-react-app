@@ -46,22 +46,22 @@ class NextGameCard extends Component{
     render(){
         return(
             <div className="next-game-card">
-						<header style={styles.cardHeader} >
+						{/* <header style={styles.cardHeader} >
 							<SportIcon imgSrc={this.props.locationData.image} />
 							<div style={styles.cardHeaderInfo}>
 								<span><strong>Sport: </strong>{this.props.locationData.sport}</span>
 								<span> <strong>Date: </strong>{this.props.locationData.date}</span>
 								<span><strong>Time: </strong>{this.props.locationData.time}</span>
 							</div>
-						</header>
+						</header> */}
                   {this.props.locationData.type === "active" ? 
                   <button type="button" className="btn btn-primary" onClick={this.handleActiveAdd}>Active Add </button> :
                   <button type="button" className="btn btn-primary" onClick={this.handleNewAdd}>New Add</button>
                   }
                   
+                  <p><strong>Number of Current Players:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
                   <p><strong>Facility: </strong>{this.props.locationData.facility}</p>
-                  <p><strong>Number of People:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
-                  <p><strong>Distance: </strong>{this.props.locationData.dist}</p>
+                  <p><strong>Distance: </strong>{this.props.locationData.dist} kms</p>
 
           <GoogleMapComponent location={this.props.locationData.location}/>
           </div>
