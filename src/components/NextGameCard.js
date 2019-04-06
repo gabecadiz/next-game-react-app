@@ -20,6 +20,7 @@ class NextGameCard extends Component{
 					'Content-Type': 'application/json'
 				}	
 			})
+			this.props.updateStateData(this.props.locationData)
 		}
 		
 		handleActiveAdd = (e) => {
@@ -37,6 +38,7 @@ class NextGameCard extends Component{
 					'Content-Type': 'application/json'
 				}	
 			})
+			this.props.updateStateData(this.props.locationData)
 		}
 
 

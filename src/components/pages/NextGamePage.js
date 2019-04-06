@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { CardStack, Card } from 'react-cardstack';
 import NextGameCard from '../NextGameCard'
+import { Card, CardWrapper } from 'react-swipeable-cards';
 
 
 
@@ -36,32 +36,28 @@ class NextGames extends Component{
         });
     })
   } 
-  
 
+  updateStateData = (addedCardData) => {
+    let filterData = this.state.data.filter(cardData => cardData !== addedCardData)
+
+    this.setState({
+      data: filterData
+    }) 
+  }
+
+  
   render(){
     
     return(
      <div>
-     { !this.state.loaded ? 
-        <p> LOADING</p> 
-      : 
-      <CardStack
-      height={600}
-      width={'100vw'}
-      background='#f8f8f8'
-      hoverOffset={10}>
-
-      {this.state.data.map ( (locationData, index) =>    
+       <CardWrapper>
+      {this.state.data.map ( (locationData, index) =>
         <Card key={index}>
-           <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId}/>
+        <NextGameCard key={locationData.gameId} locationData={locationData} updateStateData={this.updateStateData} userId={this.props.userId}/>
         </Card>
       )}
-
-
-    </CardStack>
-    }
-
-     </div>
+      </CardWrapper>
+      </div>
     )
   }
 
