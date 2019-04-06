@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
-import DateScheduler from '../DateScheduler'
+import Alert from 'react-bootstrap/Alert';
+
 
 class SignUpPage extends Component{
   state={
@@ -9,12 +10,10 @@ class SignUpPage extends Component{
       email: "",
       password: "",
       passwordConfirmation: "",
-      distance: 20,
-      sports: null,
-      startDate: new Date(),
-      endDate: new Date(),
+      sports: [],
       currentLocation: {lat: null, lng: null},
-      loadedLocation: false
+      loadedLocation: false,
+      sportsEmpty: true
   }
 
   componentDidMount(){
@@ -26,8 +25,15 @@ class SignUpPage extends Component{
         loadedLocation: true
       })
     })
+  }
+  
+  formChecker = () => {
+    if (!this.state.sportsEmpty && this.state.username && this.state.email && this.state.password && this.state.passwordConfirmation){
+      return true
+    } else {
+      return false
     }
-
+  }
 
 
   handleChange = (e) => {
@@ -52,7 +58,21 @@ class SignUpPage extends Component{
   changeSport = (e) => {
     this.setState({
       sports: e.map(e => e.value)
+    }, () => {
+      this.isSportEmpty()
     })
+  }
+
+  isSportEmpty = () => {
+    if(this.state.sports.length >= 1){
+      this.setState({
+        sportsEmpty: false
+      })
+    } else{
+      this.setState({
+        sportsEmpty: true
+      })
+    }
   }
 
   changeAvatar = (e) => {
@@ -98,8 +118,9 @@ class SignUpPage extends Component{
           username: this.state.username,
           email: this.state.email,
           password: this.state.password,
-          password_confirmation: this.state.passwordConfirmation
-        }
+          password_confirmation: this.state.passwordConfirmation,
+        },
+        sports: this.state.sports
       }),
       headers:{
         'Content-Type': 'application/json'
@@ -119,16 +140,11 @@ class SignUpPage extends Component{
   }
 
   render(){
-
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
           { !this.state.loadedLocation ? <p>LOADING CURRENT LOCATION...</p> : <p> CURRENT LOCATION LOADED </p>}
-        <label>
-        <p>Enter the link to your avatar:</p>
-          <input type="text" onChange={this.changeAvatar} value={this.state.avatar} name="avatar-link" ref="avatar-link" className="form-control" />
-        </label>
-        <br></br>
+
         <label>
           <p>Enter your username:</p>
           <input type="text" onChange={this.changeUsername} value={this.state.username} ref="username" className="form-control" />
@@ -151,23 +167,15 @@ class SignUpPage extends Component{
         <br></br>
         <h1>Preferences</h1>
         <h6>Select your sport</h6>
-        <SportSelector changeSport={this.changeSport}/>
-        <br></br>
-        <h6>When?</h6>
-        <DateScheduler
-          startDate={this.state.startDate}
-          changeDate={this.changeStartDate}
-          minDate={new Date()}
-        />
-        <DateScheduler
-          startDate={this.state.endDate}
-          changeDate={this.changeEndDate}
-          minDate={this.state.startDate}
-        />
-
+        <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
         <br></br>
 
-        <button type="submit" className="btn btn-primary">Sign Up</button>
+        { !this.formChecker() ? 
+         <Alert variant="info">  Please fill out the form completely! </Alert> 
+          : 
+          <button type="submit" className="btn btn-primary">Sign Up</button> 
+        }
+        
         </form>
       </div>
     )

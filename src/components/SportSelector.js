@@ -13,7 +13,6 @@ class SportSelector extends Component{
       this.props.sportsPicked.map( s => {
         sports.push({ value: s, label: s })
       })
-      console.log("this is mapped sports: ",sports)
     }
 
     const sportOptions = [
