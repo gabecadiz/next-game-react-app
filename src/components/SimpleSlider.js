@@ -13,10 +13,12 @@ class SimpleSlider extends React.Component {
 
     };
 
+
+
     return (
       <Slider {...settings}>
-        {this.props.locationData.map ( (locationData) =>
-        <div>
+        {this.props.locationData.map ( (locationData, index) =>
+        <div key={index}>
          <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId} updateStateData={this.props.updateStateData}/>
          </div>
         )}
