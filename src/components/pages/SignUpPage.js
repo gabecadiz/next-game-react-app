@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
-import DateScheduler from '../DateScheduler'
+// import DateScheduler from '../DateScheduler'
 
 class SignUpPage extends Component{
   state={
@@ -154,7 +154,7 @@ class SignUpPage extends Component{
         <SportSelector changeSport={this.changeSport}/>
         <br></br>
         <h6>When?</h6>
-        <DateScheduler
+        {/* <DateScheduler
           startDate={this.state.startDate}
           changeDate={this.changeStartDate}
           minDate={new Date()}
@@ -163,7 +163,7 @@ class SignUpPage extends Component{
           startDate={this.state.endDate}
           changeDate={this.changeEndDate}
           minDate={this.state.startDate}
-        />
+        /> */}
 
         <br></br>
 

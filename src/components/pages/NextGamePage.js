@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NextGameCard from '../NextGameCard'
-import { Card, CardWrapper } from 'react-swipeable-cards';
+import SimpleSlider from "../SimpleSlider";
 
 
 
@@ -50,13 +50,7 @@ class NextGames extends Component{
     
     return(
      <div>
-       <CardWrapper>
-      {this.state.data.map ( (locationData, index) =>
-        <Card key={index}>
-        <NextGameCard key={locationData.gameId} locationData={locationData} updateStateData={this.updateStateData} userId={this.props.userId}/>
-        </Card>
-      )}
-      </CardWrapper>
+       <SimpleSlider locationData={this.state.data} userId={this.props.userId} updateStateData={this.updateStateData}/>
       </div>
     )
   }
