@@ -59,30 +59,37 @@ class NextGames extends Component{
   render(){
     
     return(
+      
      <div>
-       <Slider
-        asNavFor={this.state.nav1}
-        ref={slider => (this.slider2 = slider)}
-        slidesToShow={3}
-        swipeToSlide={true}
-        focusOnSelect={true}
-       >
-       {this.state.data.map ( (locationData, index) =>
-        <div key={index} >
-         <NextGameReferenceCard key={locationData.gameId} locationData={locationData}/>
-         </div>
-         )}
-       </Slider>
-       <Slider
-       asNavFor={this.state.nav2}
-       ref={slider => (this.slider1 = slider)}>
-      {this.state.data.map ( (locationData, index) =>
-        <div key={index} >
-         <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId} updateStateData={this.updateStateData}/>
-         </div>
-         )}
-       </Slider>
-       {/* <SimpleSlider locationData={this.state.data} userId={this.props.userId} updateStateData={this.updateStateData}/> */}
+        {this.state.loaded ?  
+          <div>
+          <Slider
+          asNavFor={this.state.nav1}
+          ref={slider => (this.slider2 = slider)}
+          slidesToShow={3}
+          swipeToSlide={true}
+          focusOnSelect={true}
+          >
+          {this.state.data.map ( (locationData, index) =>
+            <div key={index} >
+            <NextGameReferenceCard key={locationData.gameId} locationData={locationData}/>
+            </div>
+          )}
+          </Slider>
+          <Slider
+          asNavFor={this.state.nav2}
+          ref={slider => (this.slider1 = slider)}>
+          {this.state.data.map ( (locationData, index) =>
+            <div key={index} >
+            <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId} updateStateData={this.updateStateData}/>
+            </div>
+          )}
+          </Slider>
+        </div>
+
+        : 
+          <p> Loading </p>
+        }
       </div>
     )
   }
