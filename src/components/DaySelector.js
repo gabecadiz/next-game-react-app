@@ -8,10 +8,10 @@ class DaySelector extends Component{
 
     
     return(
-        <span className="ck-button">
-        <label><input type="checkbox" value={this.props.value} checked={this.props.checked} defaultChecked={this.props.defaultChecked} onChange={this.props.onChange}/><span>{this.props.day}</span>
+        <div className="ck-button day-button">
+        <label><input type="checkbox" value={this.props.value} checked={this.props.checked} defaultChecked={this.props.defaultChecked} onChange={this.props.onChange}/><span className='day'>{this.props.day}</span>
         </label>
-        </span>
+        </div>
     )
   }
 

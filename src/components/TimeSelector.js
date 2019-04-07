@@ -9,7 +9,7 @@ class TimeSelector extends Component{
     
     return(
         // <TimePicker onTimeChange={this.saveTime} theme="classic" time={this.props.selectedTime} />
-        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={""} id={this.props.id}>
+        <select value={this.props.value} onChange={this.props.onTimeChange} defaultValue={""} id={this.props.id} >
             <option value=""></option>
             <option value="00:00">00:00</option>
             <option value="00:30">00:30</option>
