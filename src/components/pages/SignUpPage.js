@@ -27,7 +27,7 @@ class SignUpPage extends Component{
       })
     })
   }
-  
+
   formChecker = () => {
     if (!this.state.sportsEmpty && this.state.username && this.state.email && this.state.password && this.state.passwordConfirmation){
       return true
@@ -128,7 +128,7 @@ class SignUpPage extends Component{
           'Content-Type': 'application/json'
         }
       }).then(r => {
-        if(r.status === 200){
+        if(r.status === 201){
           r.json().then( data => {
             this.props.handleLoginStatus(data.id)
             this.props.history.push("/nextgames");
@@ -149,9 +149,9 @@ class SignUpPage extends Component{
   render(){
     return(
       <div>
-        { this.state.incompleteForm ?  
-          <Alert variant="info">  Please fill out the form completely! </Alert> 
-        : 
+        { this.state.incompleteForm ?
+          <Alert variant="info">  Please fill out the form completely! </Alert>
+        :
           <span></span>
         }
         <form onSubmit={this.handleSubmit}>
@@ -181,8 +181,8 @@ class SignUpPage extends Component{
         <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
         <br></br>
 
-          <button type="submit" className="btn btn-primary">Sign Up</button> 
-                
+          <button type="submit" className="btn btn-primary">Sign Up</button>
+
         </form>
       </div>
     )
