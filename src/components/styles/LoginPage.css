@@ -1,0 +1,60 @@
+
+div.login-window {
+  display: flex;
+  flex-flow: column;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+div.login-container {
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+  grid-template-columns: 17.5rem auto;
+  height: 80%;
+  width: 75%;
+  max-width: 65rem;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  background: #2a4eb03d;
+  padding: 0;
+  box-shadow: 0.5rem 0.5rem 0.25rem grey;
+}
+
+div.login-form {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.login-submit {
+  display: flex;
+  justify-content: center;
+}
+
+div.login-image {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  overflow: hidden;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+  border-left: 1px solid black;
+  background: white;
+}
+
+div.login-image img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  opacity: 0.85;
+}
+
+input.form-control {
+  border: 0.1em solid black;
+}

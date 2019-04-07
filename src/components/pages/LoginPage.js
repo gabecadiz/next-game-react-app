@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/LoginPage.css';
 
 class LoginPage extends Component {
   state={
@@ -21,7 +22,7 @@ class LoginPage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     fetch('http://localhost:3000/login',{
-      mode: 'cors', 
+      mode: 'cors',
       credentials: 'include',
       method: 'POST',
       body: JSON.stringify({
@@ -48,18 +49,29 @@ class LoginPage extends Component {
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-      <label>
-        <p>Enter your username test:</p>
-        <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
-      </label>
-      <br></br>
-      <label>
-        <p>Enter your password:</p>
-        <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
-      </label>
-      <button type="submit" className="btn btn-primary">Log In</button>
-      </form>
+      <div className="login-window">
+        <div className="login-container">
+          <div className="login-form">
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                <p>Enter your username test:</p>
+                <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
+              </label>
+              <br></br>
+              <label>
+                <p>Enter your password:</p>
+                <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
+              </label>
+              <div className="login-submit">
+                <button type="submit" className="btn btn-primary">Log In</button>
+              </div>
+            </form>
+          </div>
+          <div className="login-image">
+            <img src="https://images.unsplash.com/photo-1519684093736-61f49e250672?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" />
+          </div>
+        </div>
+      </div>
     )
   }
 }
