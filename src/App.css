@@ -71,3 +71,16 @@ a{
   margin: 1rem;
 }
 
+
+.linkStyle{
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 25px;
+  margin: 0 0.5rem;
+}
+.nav-link-active{
+  color: yellow;
+  border: 1px solid yellow,
+}

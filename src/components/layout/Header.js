@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom"
+import { NavLink, withRouter } from "react-router-dom"
 
 class Header extends Component {
 
@@ -26,17 +26,16 @@ class Header extends Component {
         (  
           <div>      
             <button type="button" onClick ={this.handleLogout}className="btn btn-danger">Logout!</button>
-            <Link style={linkStyle} to="/preferences">Preferences</Link> | 
-            <Link style={linkStyle} to="/nextgames"> Next Games </Link> |
-            <Link style={linkStyle} to="/mygames"> MyGames </Link> 
+            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/preferences">Preferences</NavLink> | 
+            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/nextgames"> Next Games </NavLink> |
+            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/mygames"> MyGames </NavLink> 
           </div>
         ) 
           : 
         (        
         <div>
-          <Link style={linkStyle} to="/">Landing Page</Link> | 
-          <Link style={linkStyle} to="/signup"> Sign Up</Link> |
-          <Link style={linkStyle} to="/login"> Log In </Link>
+          <NavLink className='linkStyle' activeClassName='nav-link-active' to="/signup"> Sign Up</NavLink> |
+          <NavLink className='linkStyle' activeClassName='nav-link-active' to="/login"> Log In </NavLink>
         </div>
         )}
 
@@ -58,14 +57,6 @@ const headerText = {
   margin: "0 0 1rem 0"
 }
 
-const linkStyle = {
-  color: '#fff',
-  textDecoration: "none",
-  border: "1px solid #fff",
-  padding: "0.3rem 0.5rem",
-  borderRadius: "25px",
-  margin: "0 0.5rem"
-}
 
 
 export default withRouter(Header);

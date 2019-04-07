@@ -53,6 +53,7 @@ class PreferencesPage extends Component{
     this.setState({
     selectedDays: { ...this.state.selectedDays, [`${e.target.id}`]: e.target.value}
     });
+    
   };
 
   handleSubmit = (e) => {
@@ -79,10 +80,6 @@ class PreferencesPage extends Component{
   render(){
     return(
       <Card>
-
-      <Card.Header className='card-header'>
-        <h2 className='title'>Change Your Preferences</h2>
-      </Card.Header>
       <Card.Body>
       <div className='pref-page-container'>
 
