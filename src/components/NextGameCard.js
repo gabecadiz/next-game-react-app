@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapComponent from './GoogleMapComponent'
+import '../NextGamePage.css'
 
 class NextGameCard extends Component{
     handleNewAdd = (e) => {
@@ -46,55 +47,24 @@ class NextGameCard extends Component{
     render(){
         return(
             <div className="next-game-card">
-						{/* <header style={styles.cardHeader} >
-							<SportIcon imgSrc={this.props.locationData.image} />
-							<div style={styles.cardHeaderInfo}>
-								<span><strong>Sport: </strong>{this.props.locationData.sport}</span>
-								<span> <strong>Date: </strong>{this.props.locationData.date}</span>
-								<span><strong>Time: </strong>{this.props.locationData.time}</span>
-							</div>
-						</header> */}
-                  {this.props.locationData.type === "active" ? 
-                  <button type="button" className="btn btn-primary" onClick={this.handleActiveAdd}>Active Add </button> :
-                  <button type="button" className="btn btn-primary" onClick={this.handleNewAdd}>New Add</button>
-                  }
-                  
-                  <p><strong>Number of Current Players:</strong> {this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length}</p>
-                  <p><strong>Facility: </strong>{this.props.locationData.facility}</p>
-                  <p><strong>Distance: </strong>{this.props.locationData.dist} kms</p>
 
-          <GoogleMapComponent location={this.props.locationData.location}/>
+              	{this.props.locationData.type === "active" ? 
+                	<button type="button" className="btn btn-primary next-game-add" onClick={this.handleActiveAdd}>Save This Game</button> :
+                  <button type="button" className="btn btn-primary next-game-add" onClick={this.handleNewAdd}>Save This Game</button>
+								}
+							<div className="next-game-info">
+                <p className="next-game-sport">{this.props.locationData.sport}</p>
+                <p className="next-game-facility">At {this.props.locationData.facility}</p>
+								<p className="next-game-date">{this.props.locationData.date.substring(0, this.props.locationData.date.length - 5)} at {this.props.locationData.time}</p>
+                <p className="next-game-distance">{Math.round( this.props.locationData.dist * 10 ) / 10} km away</p>
+              	<p className="next-game-players">{this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length} other players are currently joining.</p>
+							</div>
+							<div className="next-game-map">
+          		<GoogleMapComponent location={this.props.locationData.location}/>
+							</div>
           </div>
         )
     }
 }
-const styles = {
-	cardHeader: {
-		display: 'flex',
-		height: '150px',
-		width: '100%',
-		justifyContent: 'space-evenly',
-		alignItems: 'center',
-		padding: '4px 8px',
-		color: '#fff',
-		backgroundColor: '#7aa2e2'
-	},
-	cardHeaderInfo: {
-		display: 'flex',
-		flexDirection: 'column'
-	}
-}
-
-const SportIcon = ({ imgSrc }) => (
-	<img
-		style={{
-			width: '100px',
-			height: '60px',
-			border: `3px solid black`,
-		}}
-		src={imgSrc}
-		alt="Sport Icon"
-	/>
-);
 
 export default NextGameCard;
