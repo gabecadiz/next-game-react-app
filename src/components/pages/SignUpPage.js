@@ -180,8 +180,10 @@ class SignUpPage extends Component{
             </div>
             <div className="signup-user-prefs">
               <p>Select your sports:</p>
-              <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
-                <button type="submit" className="btn btn-primary">Sign Up</button>
+              <div className="signup-sport-select">
+                <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
+              </div>
+              <button type="submit" className="btn btn-primary">Sign Up</button>
             </div>
             <div className="signup-image">
               <img src="https://noemipablo630.files.wordpress.com/2015/02/tumblr_meqy8ird1w1rt1d5lo1_500.jpg" alt="" />

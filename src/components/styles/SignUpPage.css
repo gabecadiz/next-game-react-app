@@ -64,8 +64,15 @@ div.signup-user-prefs {
   padding: 1.75rem 0rem;
 }
 
-div.basic-multi-select {
-  width: 53%;
+div.signup-sport-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.signup-sport-select > div.basic-multi-select {
+  width: 63%;
   border: 0.1em solid black;
   border-radius: 0.3rem;
   font-size: 1.5rem;

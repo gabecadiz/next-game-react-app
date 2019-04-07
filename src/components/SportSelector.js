@@ -4,10 +4,10 @@ import Select from 'react-select';
 class SportSelector extends Component{
   render(){
 
-    
-    
+
+
     let sports = null
-    
+
     if (this.props.sportsPicked){
       sports = []
       this.props.sportsPicked.map( s => {
