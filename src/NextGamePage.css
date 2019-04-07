@@ -1,0 +1,125 @@
+
+.next-game-slider{
+    margin-top: 16px;
+    height: 110px;
+    margin-left: 33px;
+}
+
+.next-game-reference{
+    width: 100%;
+    display: inline-block;
+}
+
+.next-game-carousel-div{
+    width: 98%
+}
+
+#next-game-reference-text{
+    color: #fff;
+    font-size: 36px;
+    font-weight: bolder;
+    line-height: 3em;
+    margin: 10px;
+    margin-left: 1.4em;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 6px 6px 3px grey;
+    text-shadow: 2px 2px #333333;
+}
+
+.next-game-card{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80% 20%;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 3.4rem;
+    background-color: #1a2a44;
+    color: whitesmoke;
+    height: 65vh;
+    width: 70vw;
+    align-self: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+.next-game-info{
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 0.7em;
+    margin-top: 1em;
+    border-top-left-radius: 5px;
+    background-color: grey;
+    padding: 1.3em;
+}
+
+  .next-game-map{
+      grid-column: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      overflow: hidden;
+      margin: 1em;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+  }
+
+  .next-game-add{
+      grid-column: 1;
+      grid-row: 2;
+      height: 4em;
+      font-weight: bold;
+      font-size: 1.4em;
+      margin-top: 0.7em;
+      margin-left: 0.5em;
+      border-radius: 0px;
+      border-bottom-left-radius: 5px;
+  }
+  
+
+  .next-game-game-number{
+    font-weight: bold;
+    font-size: 2em;
+  }
+  
+  .next-game-sport{
+    font-size: 2em;
+  }
+  .next-game-players{
+    font-size: 1.6rem;
+  }
+  
+  .next-game-facility{
+    font-size: 1.6rem;
+  }
+
+
+.next-game-date{
+    font-size: 1.6rem;
+}
+
+.next-game-time{
+    font-size: 1.6rem;
+}
+
+.next-game-distance{
+    font-size: 1.6rem;
+}
+
+.basketball-bg{
+    background-image: url("https://ak8.picdn.net/shutterstock/videos/17027998/thumb/1.jpg");
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.soccer-bg{
+    background-image: url("https://www.danvillesoccer.net/wp-content/uploads/2014/01/soccer-background.jpg");
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.slick-center #next-game-reference-text{
+    opacity: 1;
+}

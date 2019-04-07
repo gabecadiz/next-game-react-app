@@ -9,8 +9,8 @@ render(){
       withProps({
         googleMapURL:"https://maps.googleapis.com/maps/api/js?key=AIzaSyAp1KnuoMAfRa_XgUkNqaFswmL__SNCQMc&callback=initMap",
         loadingElement: <div style={{ height: `100%` }} />,
-        containerElement: <div style={{ height: `35vh`, width: '60vw' }} />,
-        mapElement: <div style={{ height: `30vh` }} />,
+        containerElement: <div style={{ height: `100%`, width: '100%' }} />,
+        mapElement: <div style={{ height: `100%` }} />,
       }),
       withScriptjs,
       withGoogleMap

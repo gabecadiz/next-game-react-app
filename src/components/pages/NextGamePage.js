@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import NextGameCard from "../NextGameCard";
 import NextGameReferenceCard from "../NextGameReferenceCard";
+import '../../NextGamePage.css'
 
 
 
@@ -44,52 +45,53 @@ class NextGames extends Component{
             loaded:true
           })
         });
-    })
-  } 
-
-  updateStateData = (addedCardData) => {
-    let filterData = this.state.data.filter(cardData => cardData !== addedCardData)
-
-    this.setState({
-      data: filterData
-    }) 
-  }
-
-  
+      })
+    } 
+    
+    updateStateData = (addedCardData) => {
+      let filterData = this.state.data.filter(cardData => cardData !== addedCardData)
+      
+      this.setState({
+        data: filterData
+      }) 
+    }
+    
   render(){
     
     return(
       
      <div>
-        {this.state.loaded ?  
-          <div>
+        {/* {this.state.loaded ?   */}
+          <div className="next-game-carousel-div">
           <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
           slidesToShow={3}
           swipeToSlide={true}
           focusOnSelect={true}
+          centerMode={true}
+          className="next-game-slider"
           >
           {this.state.data.map ( (locationData, index) =>
-            <div key={index} >
-            <NextGameReferenceCard key={locationData.gameId} locationData={locationData}/>
-            </div>
+            <div key={index} className="next-game-reference">
+            <NextGameReferenceCard key={locationData.gameId} locationData={locationData} game={index}/>
+            </div >
           )}
           </Slider>
           <Slider
           asNavFor={this.state.nav2}
           ref={slider => (this.slider1 = slider)}>
           {this.state.data.map ( (locationData, index) =>
-            <div key={index} >
-            <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId} updateStateData={this.updateStateData}/>
+            <div key={index} className="next-game-card-container">
+            <NextGameCard key={locationData.gameId} locationData={locationData} userId={this.props.userId} updateStateData={this.updateStateData} game={index}/>
             </div>
           )}
           </Slider>
         </div>
 
-        : 
+        {/* : 
           <p> Loading </p>
-        }
+        } */}
       </div>
     )
   }
