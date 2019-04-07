@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import Alert from 'react-bootstrap/Alert';
+import '../styles/SignUpPage.css';
 
 
 class SignUpPage extends Component{
@@ -148,42 +149,45 @@ class SignUpPage extends Component{
 
   render(){
     return(
-      <div>
-        { this.state.incompleteForm ?
-          <Alert variant="info">  Please fill out the form completely! </Alert>
-        :
-          <span></span>
-        }
-        <form onSubmit={this.handleSubmit}>
-
-        <label>
-          <p>Enter your username:</p>
-          <input type="text" onChange={this.changeUsername} value={this.state.username} ref="username" className="form-control" />
-        </label>
-        <br></br>
-        <label>
-          <p>Enter your email:</p>
-          <input type="email" onChange={this.changeEmail} value={this.state.email} name="email" ref="email" className="form-control" />
-        </label>
-        <br></br>
-        <label>
-        <p>Enter a password:</p>
-          <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
-        </label>
-        <br></br>
-        <label>
-          <p>Confirm your password:</p>
-          <input type="password" name="passwordConfirmation" onChange={this.changePasswordConfirmation} value={this.state.passwordConfirmation} ref="passwordConfirmation" className="form-control" />
-        </label>
-        <br></br>
-        <h1>Preferences</h1>
-        <h6>Select your sport</h6>
-        <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
-        <br></br>
-
-          <button type="submit" className="btn btn-primary">Sign Up</button>
-
-        </form>
+      <div className="signup-window">
+        <div className="signup-container">
+          { this.state.incompleteForm ?
+            <Alert variant="info">  Please fill out the form completely! </Alert>
+          :
+            <span></span>
+          }
+          <form onSubmit={this.handleSubmit} className="signup-form">
+            <div className="signup-header">
+              <h1 >Find Your Next Game</h1>
+            </div>
+            <div className="signup-user-info">
+              <label>
+                <p>Enter your username:</p>
+                <input type="text" onChange={this.changeUsername} value={this.state.username} ref="username" className="form-control" />
+              </label>
+              <label>
+                <p>Enter your email:</p>
+                <input type="email" onChange={this.changeEmail} value={this.state.email} name="email" ref="email" className="form-control" />
+              </label>
+              <label>
+              <p>Enter a password:</p>
+                <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
+              </label>
+              <label>
+                <p>Confirm your password:</p>
+                <input type="password" name="passwordConfirmation" onChange={this.changePasswordConfirmation} value={this.state.passwordConfirmation} ref="passwordConfirmation" className="form-control" />
+              </label>
+            </div>
+            <div className="signup-user-prefs">
+              <p>Select your sports:</p>
+              <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
+                <button type="submit" className="btn btn-primary">Sign Up</button>
+            </div>
+            <div className="signup-image">
+              <img src="https://noemipablo630.files.wordpress.com/2015/02/tumblr_meqy8ird1w1rt1d5lo1_500.jpg" alt="" />
+            </div>
+          </form>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,102 @@
+
+div.signup-window {
+  flex-flow: column;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+div.signup-container {
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  width: 75%;
+  max-width: 65rem;
+  height: 90%;
+  background: #2a4eb03d;
+  padding: 0;
+  box-shadow: 0.5rem 0.5rem 0.25rem grey;
+}
+
+form.signup-form {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 47% 53%;
+  grid-template-rows: 13% 57% 30%;
+}
+
+div.signup-header {
+  grid-row: 1;
+  grid-column: span 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.signup-header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 80%;
+  border-bottom: 1px solid;
+}
+
+div.signup-user-info {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 0rem;
+}
+
+div.signup-user-prefs {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem 0rem;
+}
+
+div.basic-multi-select {
+  width: 53%;
+  border: 0.1em solid black;
+  border-radius: 0.3rem;
+  font-size: 1.5rem;
+}
+
+input.form-control {
+  border: 0.1em solid black;
+}
+
+div.signup-user-prefs button {
+  margin: 0;
+}
+
+div.signup-image {
+  grid-column: span 2;
+  grid-row: 3;
+  overflow: hidden;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+  border-top: 1px solid black;
+  background: white;
+}
+
+div.signup-image img{
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  opacity: 0.85;
+  width: 100%
+}
