@@ -23,55 +23,6 @@ a{
   padding: 0 1rem;
 }
 
-/* .btn {
-  display: inline-block;
-  border: none;
-  background: #555;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  margin: 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bolder;
-} */
-
-/* .btn:hover{
-  background:#777;
-  padding: 0.5rem 1.2rem;
-  margin-right: 1rem;
-  transition: 0.5s;
-} */
-
-.distance-container{
-  width: 98%;
-  height: 20px;
-  margin: auto;
-}
-
-.distance-slider{
-  width: 100%;
-  height: 15px;
-
-}
-
-.next-game-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  background-color: #1a2a44;
-  color: whitesmoke;
-  height: 90vh;
-}
-
-.next-game-image{
-  height: 30vh;
-  width: 50vh;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-
 .linkStyle{
   color: #fff;
   text-decoration: none;
