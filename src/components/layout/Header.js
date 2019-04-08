@@ -29,16 +29,16 @@ class Header extends Component {
           { this.props.loginStatus ? 
           (  
             <div className='nav-container'>      
-              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/preferences">Preferences</NavLink> | 
-              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/nextgames"> Next Games </NavLink> |
-              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/mygames"> MyGames </NavLink> 
+              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/preferences">Preferences</NavLink> 
+              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/nextgames"> Next Games </NavLink> 
+              <NavLink className='linkStyle' activeClassName='nav-link-active' to="/mygames"> My Games </NavLink> 
               <button type="button" onClick ={this.handleLogout}className="btn btn-danger logout-btn">Logout!</button>
             </div>
           ) 
             : 
           (        
           <div className='nav-container'>
-            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/signup"> Sign Up</NavLink> |
+            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/signup"> Sign Up</NavLink> 
             <NavLink className='linkStyle' activeClassName='nav-link-active' to="/login"> Log In </NavLink>
           </div>
           )}

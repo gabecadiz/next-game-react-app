@@ -41,6 +41,7 @@
 .sport-select{
   grid-column-start: 4;
   grid-row: 2/5;
+  width: 14rem;
 }
 .day1{
   grid-column-start: 1;
