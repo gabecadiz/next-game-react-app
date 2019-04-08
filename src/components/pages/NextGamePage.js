@@ -28,8 +28,7 @@ class NextGames extends Component{
     navigator.geolocation.getCurrentPosition(location => {
       let lat = parseFloat(location.coords.latitude.toFixed(8))
       let lng = parseFloat(location.coords.longitude.toFixed(8))
-      console.log(lat)
-      console.log(lng)
+
       var url = new URL(`http://localhost:3000/api/users/${this.props.userId}/next_games`),
       params={lat: lat, lng: lng}
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
