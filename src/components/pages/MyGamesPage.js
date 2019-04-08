@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyGamesAccordion from '../MyGamesAccordion'
+import '../styles/MyGamesPage.css'
 
 
 class MyGames extends Component{
@@ -38,8 +39,8 @@ class MyGames extends Component{
   render(){
     
     return(
-        <div>
-         { !this.state.loaded ? <p> LOADING</p> : <MyGamesAccordion savedGames = {this.state.data} userId={this.props.userId} changeLoadedStatus={this.changeLoadedStatus}/> }
+        <div className="saved-game-page-container">
+         { !this.state.loaded ? <p> LOADING</p> : <MyGamesAccordion savedGames={this.state.data} userId={this.props.userId} changeLoadedStatus={this.changeLoadedStatus}/> }
         </div>
     )
   }

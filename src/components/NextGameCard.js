@@ -60,7 +60,7 @@ class NextGameCard extends Component{
               	<p className="next-game-players">{this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length} other players are currently joining.</p>
 							</div>
 							<div className="next-game-map">
-          		<GoogleMapComponent location={this.props.locationData.location}/>
+          		{/* <GoogleMapComponent location={this.props.locationData.location}/> */}
 							</div>
           </div>
         )
