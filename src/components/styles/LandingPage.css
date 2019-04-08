@@ -1,0 +1,25 @@
+.landing-logo {
+  position: absolute;
+}
+
+.landing-logo img {
+  height: 20rem;
+}
+
+.landing-title {
+  position: absolute;
+  height: 30rem;
+}
+
+.landing-title h1 {
+  font-weight:bolder;
+  font-size:4rem;
+}
+
+div.landing-container {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
