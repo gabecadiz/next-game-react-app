@@ -23,11 +23,12 @@
     margin-left: 1.4em;
     padding: 2%;
     position: relative;
-    text-align: center;
+    text-align: left;
+    text-indent: 2rem;
     width: 80%;
     border-radius: 5px;
     box-shadow: 6px 6px 3px grey;
-    text-shadow: 2px 2px #333333;
+    text-shadow: 3px 2px #333333;
 }
 
 .next-game-card{
@@ -109,13 +110,31 @@
 }
 
 .basketball-bg{
-    background-image: url("https://ak8.picdn.net/shutterstock/videos/17027998/thumb/1.jpg");
+    background-image: url("./assets/basketball.jpg");
     background-size: cover;
     opacity: 0.4;
 }
 
 .soccer-bg{
-    background-image: url("https://www.danvillesoccer.net/wp-content/uploads/2014/01/soccer-background.jpg");
+    background-image: url("./assets/soccer.jpg");
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.volleyball-bg{
+    background-image: url("./assets/volleyball.png");
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.ultimate-frisbee-bg{
+    background-image: url("./assets/frisbee.jpg");
+    background-size: cover;
+    opacity: 0.4;
+}
+
+.tennis-bg{
+    background-image: url("./assets/tennis.jpg");
     background-size: cover;
     opacity: 0.4;
 }

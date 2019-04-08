@@ -1,7 +1,7 @@
 .next-game-logo{
   position: absolute;
   left: 10px;
-  top: 6px;
+  top: 10px;
   height: 100px;
   width: 250px;
 }
@@ -24,21 +24,23 @@
 }
 
 .linkStyle{
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #fff;
   text-decoration: none!important;
-  border: 1px solid #fff;
+  border-bottom: 2px solid #fff;
   padding: 0.3rem 0.5rem;
-  border-radius: 25px;
   margin: 0 0.5rem;
 }
 
 a:hover{
-  color: yellow;
+  color: #FBD77C;
+  border-bottom: 2px solid #FFBD77;
 }
 
 .nav-link-active{
-  color: yellow;
-  border: 1px solid yellow,
+  color: #f8c233;
+  border-bottom: 2px solid #f8c233 !important;
 }
 
 .logout-btn{
@@ -50,6 +52,7 @@ a:hover{
 .header-style{
   background-image: linear-gradient(#67B8D3, #3FA1C1);
   color: #fff;
+  text-shadow: 1px 1px #606060;
   text-align: center;
   padding: 0.8rem;
   overflow: hidden
