@@ -79,9 +79,8 @@ class PreferencesPage extends Component{
 
   render(){
     return(
-      <Card>
-      <Card.Body>
-      <div className='pref-page-container'>
+      <Card className='pref-page-container'>
+      <Card.Body className='grid-wrapper'>
 
        <form onSubmit={this.handleSubmit}>
         <div className='grid-container'>
@@ -212,12 +211,15 @@ class PreferencesPage extends Component{
               </div>
             }
           </div>
+            <div className="sport-character">
+              <img className="sport-character-image" src='https://www.seekpng.com/png/full/249-2495244_cricket-clipart-cricket-coach-sports-equipment-manager-cartoon.png' alt='sport-character'/>
+            </div>
             <button type="submit" className="btn btn-primary next-game-btn">Find My Next Game</button>
 
         </div>
 
        </form>
-      </div>
+     
       </Card.Body>
       </Card>
     )

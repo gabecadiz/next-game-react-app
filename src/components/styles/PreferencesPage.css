@@ -1,41 +1,61 @@
 .title {
   color: white;
 }
+.pref-page-container{
+  height: 80%;
+  width: 75%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.grid-wrapper{
+  display: flex;
+  justify-content: center;
+  box-shadow: 0.5rem 0.5rem 0.25rem grey;
+}
 
 .grid-container{
   display: grid;
-  height: 70vh;
-  width: 50vw;
-  grid-template-columns: 8rem 10rem 4rem 14rem;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 10rem 12rem 2rem 14rem;
   grid-template-rows: 2rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem;
   grid-gap: 0.5rem;
-  margin: auto
+  margin: auto;
+  justify-items: center;
 }
 
 .sport-header{
   grid-column: 4;
-  grid-row-start: 2;
+  grid-row-start: 1;
+  font-weight: bolder;
+  font-size: 1.2rem;
 }
 .date-header{
   grid-column: 1/3;
-  grid-row: 1
+  grid-row: 1;
+  font-weight: bolder;
+  font-size: 1.2rem
 }
 
 .sport-select{
   grid-column-start: 4;
-  grid-row: 3/6;
+  grid-row: 2/5;
 }
 .day1{
   grid-column-start: 1;
   grid-row-start: 2;
+
 }
 .day2{
   grid-column-start: 1;
   grid-row-start: 3;
+
 }
 .day3{
   grid-column-start: 1;
   grid-row-start: 4;
+
 }
 .day4{
   grid-column-start: 1;
@@ -57,38 +77,94 @@
 .time1{
   grid-column-start: 2;
   grid-row-start: 2;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
 }
 .time2{
   grid-column-start: 2;
   grid-row-start: 3;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+
 }
 .time3{
   grid-column-start: 2;
   grid-row-start: 4;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+
 }
 .time4{
   grid-column-start: 2;
   grid-row-start: 5;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+
 }
 .time5{
   grid-column-start: 2;
   grid-row-start: 6;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+
 }
 .time6{
   grid-column-start: 2;
   grid-row-start: 7;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+
 }
 .time7{
   grid-column-start: 2;
   grid-row-start: 8;
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 4rem;
+  width: 12rem;
+}
+
+.empty-time{
+  background-color: #EFEFEF;
+  border-radius: 4px;
+  overflow: hidden;
+  grid-column-start: 2;
+  grid-row-start: 3;
 }
 
 .next-game-btn{
-  grid-column: 3/5;
-  grid-row: 7/9;
-  height: 8rem;
-  width: 18.5rem;
+  grid-column: 4/5;
+  grid-row: 8/9;
+  height: 4rem;
+  width: 14rem;
   align-self: end;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-radius: 40px;
+  border: 1px solid #007D2A;
+  background-color: #1DB952;
+}
+.next-game-btn:hover{
+  background-color: #039F38;
 }
 
 .time-options{
@@ -98,17 +174,24 @@
 }
 .from-time{
   flex: 1;
-  padding: 0.2rem;
+  padding: 0.6rem;
 }
 .to-time{
   flex: 1;
-  padding: 0.2rem;
+  padding: 0.6rem;
 }
 
-.card-header{
-  background-image: url('https://i.imgur.com/ofMPS0d.png?1')
+.sport-character{
+  grid-row: 5/8;
+  grid-column: 4/5;
+  height: 12rem;
+  width: 12rem;
+  align-self: center;
 }
-
+.sport-character-image{
+  height: 100%;
+  width: 100%
+}
 
 /* Day Selector Styling */
 
@@ -119,25 +202,25 @@
   overflow-x: hidden;
   overflow-y: hidden;
   float:left;
-  height: 3.5rem;
+  height: 4rem;
   cursor: pointer;
-  width: 8rem;
+  width: 10rem;
 }
 
 .ck-button label {
   float:left;
-  width:8rem;
+  width:10rem;
   cursor: pointer;
 }
 
 .ck-button label:hover {
-  background-color: #cad1f7;
+  background-color: #FFBD77;
 }
 
 .ck-button label span {
   text-align:center;
   margin:auto;
-  padding:0.8rem;
+  padding:1.3rem;
   display:block;
 
 }
@@ -148,7 +231,7 @@
 }
 
 .ck-button input:checked + span {
-  background-color:rgb(18, 48, 185);
+  background-image: linear-gradient(#FFA84C, #FF9423);
   color:#fff;
 }
 
