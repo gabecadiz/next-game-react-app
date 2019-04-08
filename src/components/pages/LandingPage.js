@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import posed, { PoseGroup } from 'react-pose';
+import { Link } from "react-router-dom"
+import posed, { PoseGroup } from 'react-pose'
 import '../styles/LandingPage.css'
 
 
@@ -21,6 +22,11 @@ const Logo = posed.div({
 });
 
 const NextGame = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
+
+const SignIn = posed.div({
   enter: { opacity: 1 },
   exit: { opacity: 0 }
 });
@@ -55,6 +61,14 @@ class LandingPage extends Component{
               <Logo key="next-game-logo" className="landing-logo">
                 <img src="https://github.com/amilford87/next-game-react-app/blob/master/src/assets/next-game-logo.png?raw=true" alt="" />
               </Logo>
+          ]}
+        </PoseGroup>
+        <PoseGroup>
+          {isVisible && [
+              <SignIn key="next-game-buttons" className="landing-buttons">
+                <Link to="/signup"> <button type="button" className="btn btn-primary landing-signup">Sign up</button></Link>
+                <Link to="/login"> <button type="button" className="btn btn-success landing-login">Log In</button> </Link>
+              </SignIn>
           ]}
         </PoseGroup>
       </div>
