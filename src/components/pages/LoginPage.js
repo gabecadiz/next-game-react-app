@@ -58,12 +58,13 @@ class LoginPage extends Component {
                 <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
               </label>
               <br></br>
+              <br></br>
               <label>
                 <p>Enter your password:</p>
                 <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
               </label>
               <div className="login-submit">
-                <button type="submit" className="btn btn-primary">Log In</button>
+                <button type="submit" className="btn btn-primary btn-login">Log In</button>
               </div>
             </form>
           </div>
