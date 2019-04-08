@@ -8,7 +8,6 @@ div.signup-window {
 }
 
 div.signup-container {
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
   width: 75%;
   max-width: 65rem;
@@ -16,6 +15,19 @@ div.signup-container {
   background: #2a4eb03d;
   padding: 0;
   box-shadow: 0.5rem 0.5rem 0.25rem grey;
+  background-image: linear-gradient(#FC8100, #FF9423);
+  overflow:hidden;
+  min-height: 42rem;
+  min-width: 42rem;
+  max-height: 65rem;
+}
+
+div.signup-container p {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
+  margin-bottom: 0.5rem;
 }
 
 form.signup-form {
@@ -23,7 +35,7 @@ form.signup-form {
   height: 100%;
   width: 100%;
   grid-template-columns: 47% 53%;
-  grid-template-rows: 13% 57% 30%;
+  grid-template-rows: 13% 30% 40% 17%;
 }
 
 div.signup-header {
@@ -36,17 +48,15 @@ div.signup-header {
 }
 
 div.signup-header h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-  width: 80%;
-  border-bottom: 1px solid;
+  margin:0;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bolder;
 }
 
 div.signup-user-info {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3/5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,44 +66,71 @@ div.signup-user-info {
 
 div.signup-user-prefs {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 1.75rem 0rem;
+  padding-top: 1.5rem;
+  width: 100%
 }
 
 div.signup-sport-select {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-div.signup-sport-select > div.basic-multi-select {
-  width: 63%;
-  border: 0.1em solid black;
-  border-radius: 0.3rem;
+div.signup-sport-select p {
   font-size: 1.5rem;
 }
 
-input.form-control {
-  border: 0.1em solid black;
+div.signup-sport-select div.basic-multi-select {
+  width: 70%;
+  border-radius: 0.3rem;
+  font-size: 1.5rem;
+  max-width: 20.5rem;
+  min-width: 19rem;
 }
 
-div.signup-user-prefs button {
+div.signup-sport-select div.select__multi-value {
+  background: #fff;
+  border: 1px solid #05779D;
+  border-radius: 0.3rem;
+}
+
+div.signup-submit {
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+div.signup-submit button.btn-signup {
   margin: 0;
+  height: 4rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border-radius: 40px;
+  border: 1px solid #007D2A;
+  background-color: #1DB952;
+}
+
+div.signup-submit button.btn-signup:hover {
+  background-color: #039F38;
 }
 
 div.signup-image {
   grid-column: span 2;
-  grid-row: 3;
+  grid-row: 2;
   overflow: hidden;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  width: 100.5%;
   position: relative;
   border-top: 1px solid black;
+  border-bottom: 1px solid black;
   background: white;
 }
 

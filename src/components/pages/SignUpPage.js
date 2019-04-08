@@ -160,6 +160,9 @@ class SignUpPage extends Component{
             <div className="signup-header">
               <h1 >Find Your Next Game</h1>
             </div>
+            <div className="signup-image">
+              <img src="https://noemipablo630.files.wordpress.com/2015/02/tumblr_meqy8ird1w1rt1d5lo1_500.jpg" alt="" />
+            </div>
             <div className="signup-user-info">
               <label>
                 <p>Enter your username:</p>
@@ -179,15 +182,12 @@ class SignUpPage extends Component{
               </label>
             </div>
             <div className="signup-user-prefs">
-              <p>Select your sports:</p>
               <div className="signup-sport-select">
+                <p>Select your sports</p>
                 <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
               </div>
-              <button type="submit" className="btn btn-primary">Sign Up</button>
             </div>
-            <div className="signup-image">
-              <img src="https://noemipablo630.files.wordpress.com/2015/02/tumblr_meqy8ird1w1rt1d5lo1_500.jpg" alt="" />
-            </div>
+            <div className="signup-submit"><button type="submit" className="btn btn-primary btn-signup">Sign Up</button></div>
           </form>
         </div>
       </div>

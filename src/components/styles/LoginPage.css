@@ -14,6 +14,8 @@ div.login-container {
   height: 80%;
   width: 75%;
   max-width: 65rem;
+  min-width: 48rem;
+  min-height: 30rem;
   border: 0.1rem solid black;
   border-radius: 0.5rem;
   background: #2a4eb03d;
@@ -36,6 +38,11 @@ div.login-form {
   text-shadow: 1px 1px black;
 }
 
+div.login-form p{
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
+}
+
 div.login-submit {
   display: flex;
   justify-content: center;
@@ -50,7 +57,11 @@ div.login-submit .btn-login {
   border: 1px solid #007D2A;
   background-color: #1DB952;
   margin-top: 2rem;
-  }
+}
+
+div.login-submit .btn-login:hover {
+  background-color: #039F38;
+}
 
 div.login-image {
   grid-column: 2;
@@ -71,8 +82,4 @@ div.login-image img {
   right: -9999px;
   margin: auto;
   opacity: 0.85;
-}
-
-div.login-form > input.form-control {
-  border: 0.1em solid black;
 }
