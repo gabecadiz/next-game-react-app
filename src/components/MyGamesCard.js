@@ -28,7 +28,8 @@ class MyGamesCard extends Component{
 				<div className="my-game-card">
 				<button className="btn btn-danger saved-games-remove-button" onClick={this.handleDeleteGame}>Remove</button>
 				<br></br>
-					<p className="saved-games-players">With {this.props.locationData.other_players - 1} other players.</p>
+				<p className="saved-game-distance">{Math.round( this.props.locationData.dist * 10 ) / 10} km away</p>
+					<p className="saved-games-players">With {this.props.locationData.other_players - 1} other players</p>
 					<div className="saved-games-map">
 			<GoogleMapComponent location={this.props.locationData.location}/>
 			</div>

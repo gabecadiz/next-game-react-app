@@ -8,16 +8,15 @@
     margin: auto;
     margin-top: 1rem;
     box-shadow: 0.5rem 0.5rem 0.25rem grey;
-    background-image: linear-gradient(#FFA84C, #FFBD77);
+    background-image: url('../../assets/accordian-bg-soccer.jpg');
     align-items: center;
     overflow: hidden;
 }
 
 .my-game-card{
     display: grid;
-    grid-template-columns: 47%  5% 47%;
-    border-radius: 5px;
-    background-color: #FFBD77;
+    grid-template-columns: 43%  14% 43%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     overflow: hidden;
 }
 
@@ -50,30 +49,46 @@
 
 .saved-games-remove-button{
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 5;
     height: 3rem;
     width: 7rem;
     justify-self: right;
     font-size: 1.1rem;
-    margin-top: 1.6rem;
     margin-right: 1rem;
+    box-shadow: 2px 2px 3px grey;
+    opacity: 0.95;
     color: white;
+}
+
+.saved-game-distance{
+    grid-column: 3;
+    grid-row: 2;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px grey;
+    margin-top: 1.6rem;
+    margin-right: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 
 .saved-games-players{
     grid-column: 3;
-    grid-row: 2;
-    text-align: center;
-    font-size: 1.4rem;
-    align-self: center;
+    grid-row: 1;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px grey;
+    font-size: 1.8rem;
+    margin-top: 1.6rem;
+    margin-right: 2rem;
+    font-weight: bold;
 }
 
 .saved-games-map{
-    height: 20rem;
+    height: 18rem;
     width: 100%;
     grid-column: 1;
     grid-row-start: 1;
-    grid-row-end: 3;
-    margin: 0.8rem;
+    grid-row-end: 6;
 }
