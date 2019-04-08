@@ -24,7 +24,8 @@ class Header extends Component {
     
         <header className='header-container header-style'>
          
-            <img className='next-game-logo' src='https://i.imgur.com/7gwnVAA.png' alt='next-game-logo'/>
+         
+          { this.props.loginStatus ?  <img className='next-game-logo' src='https://i.imgur.com/7gwnVAA.png' alt='next-game-logo'/> : <span></span> }
         
           { this.props.loginStatus ? 
           (  
