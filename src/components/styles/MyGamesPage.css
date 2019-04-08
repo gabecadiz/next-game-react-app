@@ -1,0 +1,65 @@
+.saved-game-page-container{
+    width: 75%;
+    height: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.25rem grey;
+    align-items: center;
+}
+
+.my-game-card{
+    display: grid;
+    grid-template-columns: 47%  5% 47%;
+}
+
+.saved-games-header-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;   
+}
+
+.saved-games-header-emoji{
+    grid-column: 1;
+    font-size: 2.5rem;
+    margin-left: 3.5rem;
+    align-self: center;
+}
+
+.saved-games-header-facility{
+    grid-column: 2;
+    font-size: 1.4rem;
+    align-self: center
+}
+
+.saved-games-header-date{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    align-self: center
+}
+
+.saved-games-remove-button{
+    grid-column: 3;
+    grid-row: 1;
+    height: 5rem;
+    font-size: 1.8rem;
+    margin-top: 0.8rem;
+
+}
+
+.saved-games-players{
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+    font-size: 1.4rem;
+    align-self: center;
+}
+
+.saved-games-map{
+    height: 20rem;
+    width: 100%;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0.8rem;
+}
