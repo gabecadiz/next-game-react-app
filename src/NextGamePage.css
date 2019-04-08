@@ -38,15 +38,45 @@
     flex-direction: column;
     margin: auto;
     margin-top: 3.4rem;
-    background-image: linear-gradient(#FC8100, #FF9423);
     box-shadow: 0.5rem 0.5rem 0.25rem grey;
     color:#191919;
     height: 65vh;
-    width: 70vw;
+    width: 65vw;
     align-self: center;
     margin-bottom: 1rem;
     border-radius: 5px;
   }
+
+  .next-game-bball-bg{
+    background-image: url(./assets/basketball-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .next-game-tennis-bg{
+    background-image: url(./assets/tennis-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .next-game-volleyball-bg{
+    background-image: url(./assets/volleyball-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .next-game-frisbee-bg{
+    background-image: url(./assets/frisbee-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .next-game-soccer-bg{
+    background-image: url(./assets/soccer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 
 .next-game-info{
     grid-column: 1;
@@ -55,7 +85,7 @@
     margin-top: 1em;
     margin-bottom: 1em;
     border-top-left-radius: 5px;
-    background-color: #FFBD77;
+    border-bottom-left-radius: 5px;
     padding: 1.3em;
 }
 
@@ -77,7 +107,9 @@
       margin-top: 9rem;
       border-radius: 0px;
       color: white;
-      border-bottom-left-radius: 5px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 3px grey;
+      opacity: 0.95;
       border: 1px solid #007D2A;
       background-color: #1DB952;
   }
@@ -102,30 +134,42 @@
   
   .next-game-sport{
     font-size: 2em;
+    color:white;
     font-weight: bolder;
     text-align: center;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px grey;
 
   }
   .next-game-players{
     font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px grey;
   }
   
   .next-game-facility{
     font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px grey;
   }
 
 
 .next-game-date{
     font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px grey;
 }
 
 .next-game-time{
     font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px grey;
 }
 
 .next-game-distance{
     font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px grey;
 }
 
 .basketball-bg{

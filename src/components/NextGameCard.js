@@ -42,11 +42,29 @@ class NextGameCard extends Component{
 			this.props.updateStateData(this.props.locationData)
 		}
 
-
-
-    render(){
+		backgroundImage = () => {
+			let sport = this.props.locationData.sport
+			switch(sport){
+			case 'Basketball':
+			return "next-game-bball-bg";
+			case 'Soccer':
+			return "next-game-soccer-bg";
+			case 'Volleyball':
+			return "next-game-volleyball-bg";
+			case 'Ultimate-frisbee':
+			return "next-game-frisbee-bg";
+			case 'Tennis':
+			return "next-game-tennis-bg";
+			default:
+			console.log('no sports');
+		}
+	}
+	
+	
+	render(){
+		const classes = `next-game-card ${this.backgroundImage()}`
         return(
-            <div className="next-game-card">
+            <div className={classes}>
 
 								<div className="next-game-info">
                 <p className="next-game-sport">{this.props.locationData.sport}</p>
@@ -60,7 +78,7 @@ class NextGameCard extends Component{
 								}
 							</div>
 							<div className="next-game-map">
-          		{/* <GoogleMapComponent location={this.props.locationData.location}/> */}
+          		<GoogleMapComponent location={this.props.locationData.location}/>
 							</div>
           </div>
         )
