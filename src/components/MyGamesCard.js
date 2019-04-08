@@ -26,11 +26,11 @@ class MyGamesCard extends Component{
     render(){
 			return(
 				<div className="my-game-card">
-				<button className="btn btn-primary saved-games-remove-button" onClick={this.handleDeleteGame}>Remove</button>
+				<button className="btn btn-danger saved-games-remove-button" onClick={this.handleDeleteGame}>Remove</button>
 				<br></br>
 					<p className="saved-games-players">With {this.props.locationData.other_players - 1} other players.</p>
 					<div className="saved-games-map">
-			{/* <GoogleMapComponent location={this.props.locationData.location}/> */}
+			<GoogleMapComponent location={this.props.locationData.location}/>
 			</div>
 			</div>
 			)

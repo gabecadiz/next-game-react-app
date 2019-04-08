@@ -48,16 +48,16 @@ class NextGameCard extends Component{
         return(
             <div className="next-game-card">
 
-              	{this.props.locationData.type === "active" ? 
-                	<button type="button" className="btn btn-primary next-game-add" onClick={this.handleActiveAdd}>Save This Game</button> :
-                  <button type="button" className="btn btn-primary next-game-add" onClick={this.handleNewAdd}>Save This Game</button>
-								}
-							<div className="next-game-info">
+								<div className="next-game-info">
                 <p className="next-game-sport">{this.props.locationData.sport}</p>
                 <p className="next-game-facility">At {this.props.locationData.facility}</p>
 								<p className="next-game-date">{this.props.locationData.date.substring(0, this.props.locationData.date.length - 5)} at {this.props.locationData.time}</p>
                 <p className="next-game-distance">{Math.round( this.props.locationData.dist * 10 ) / 10} km away</p>
               	<p className="next-game-players">{this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length} other players are currently joining.</p>
+              	{this.props.locationData.type === "active" ? 
+                	<button type="button" className="btn next-game-add" onClick={this.handleActiveAdd}>Save This Game</button> :
+                  <button type="button" className="btn next-game-add" onClick={this.handleNewAdd}>Save This Game</button>
+								}
 							</div>
 							<div className="next-game-map">
           		{/* <GoogleMapComponent location={this.props.locationData.location}/> */}

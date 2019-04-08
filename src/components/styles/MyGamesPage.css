@@ -1,20 +1,30 @@
+.accordion{
+    border: 1px solid white;
+}
+
 .saved-game-page-container{
-    width: 75%;
+    width: 76%;
     height: 80%;
     margin: auto;
     margin-top: 1rem;
     box-shadow: 0.5rem 0.5rem 0.25rem grey;
+    background-image: linear-gradient(#FFA84C, #FFBD77);
     align-items: center;
+    overflow: hidden;
 }
 
 .my-game-card{
     display: grid;
     grid-template-columns: 47%  5% 47%;
+    border-radius: 5px;
+    background-color: #FFBD77;
+    overflow: hidden;
 }
 
 .saved-games-header-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;   
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+       
 }
 
 .saved-games-header-emoji{
@@ -32,7 +42,7 @@
 
 .saved-games-header-date{
     grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-end: 6;
     font-size: 1.2rem;
     margin-left: 2rem;
     align-self: center
@@ -41,11 +51,15 @@
 .saved-games-remove-button{
     grid-column: 3;
     grid-row: 1;
-    height: 5rem;
-    font-size: 1.8rem;
-    margin-top: 0.8rem;
-
+    height: 3rem;
+    width: 7rem;
+    justify-self: right;
+    font-size: 1.1rem;
+    margin-top: 1.6rem;
+    margin-right: 1rem;
+    color: white;
 }
+
 
 .saved-games-players{
     grid-column: 3;
