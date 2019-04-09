@@ -20,12 +20,31 @@ class MyGamesCard extends Component{
 				this.props.changeLoadedStatus()
 			})
 		}
+
+		backgroundImage = () => {
+			let sport = this.props.locationData.sport
+			switch(sport){
+			case 'Basketball':
+			return "accordian-bg-basketball";
+			case 'Soccer':
+			return "accordian-bg-soccer";
+			case 'Volleyball':
+			return "accordian-bg-volleyball";
+			case 'Ultimate-frisbee':
+			return "accordian-bg-frisbee";
+			case 'Tennis':
+			return "accordian-bg-tennis";
+			default:
+			console.log('no sports');
+		}
+	}
 		
 
 
     render(){
+			const classes = `my-game-card ${this.backgroundImage()}`
 			return(
-				<div className="my-game-card">
+				<div className={classes}>
 				<button className="btn btn-danger saved-games-remove-button" onClick={this.handleDeleteGame}>Remove</button>
 				<br></br>
 				<p className="saved-game-distance">{Math.round( this.props.locationData.dist * 10 ) / 10} km away</p>
