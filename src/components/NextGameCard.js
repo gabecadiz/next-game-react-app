@@ -71,7 +71,7 @@ class NextGameCard extends Component{
                 <p className="next-game-facility">At {this.props.locationData.facility}</p>
 								<p className="next-game-date">{this.props.locationData.date.substring(0, this.props.locationData.date.length - 5)} at {this.props.locationData.time}</p>
                 <p className="next-game-distance">{Math.round( this.props.locationData.dist * 10 ) / 10} km away</p>
-              	<p className="next-game-players">{this.props.locationData.other_players === 0 ? 0: this.props.locationData.other_players.length} other players are currently joining.</p>
+              	<p className="next-game-players">{this.props.locationData.other_players.length === 0 ? "Be the first one there!" : this.props.locationData.other_players.length + " other players are currently joining."}</p>
               	{this.props.locationData.type === "active" ? 
                 	<button type="button" className="btn next-game-add" onClick={this.handleActiveAdd}>Save This Game</button> :
                   <button type="button" className="btn next-game-add" onClick={this.handleNewAdd}>Save This Game</button>
