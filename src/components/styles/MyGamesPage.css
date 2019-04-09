@@ -7,17 +7,33 @@
     height: 80%;
     margin: auto;
     margin-top: 1rem;
-    box-shadow: 0.5rem 0.5rem 0.25rem grey;
-    background-image: url('../../assets/accordian-bg-soccer.jpg');
     align-items: center;
-    overflow: hidden;
 }
 
 .my-game-card{
     display: grid;
     grid-template-columns: 43%  14% 43%;
     grid-template-rows: 20% 20% 20% 20% 20%;
-    overflow: hidden;
+}
+
+.accordian-bg-frisbee{
+    background-image: url('../../assets/accordian-bg-frisbee.jpg');
+}
+
+.accordian-bg-soccer{
+    background-image: url('../../assets/accordian-bg-soccer.jpg');
+}
+
+.accordian-bg-basketball{
+    background-image: url('../../assets/accordian-bg-basketball.jpg');
+}
+
+.accordian-bg-volleyball{
+    background-image: url('../../assets/accordian-bg-volleyball.jpg');
+}
+
+.accordian-bg-tennis{
+    background-image: url('../../assets/accordian-bg-tennis.jpg');
 }
 
 .saved-games-header-grid{
@@ -88,6 +104,7 @@
 .saved-games-map{
     height: 18rem;
     width: 100%;
+    margin: 1.3em;
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 6;
