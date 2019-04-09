@@ -7,7 +7,7 @@
 }
 .nav-container{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
   background-image: linear-gradient(#67B8D3, #3FA1C1);
   color: #fff;
@@ -59,9 +59,5 @@ a:hover{
   border-bottom: 2px solid #f8c233 !important;
 }
 .logout-btn{
-  position: absolute;
-  right: 10px;
-  top: 10px;
   box-shadow: 1px 1px 1px grey;
-
 }

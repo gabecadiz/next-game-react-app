@@ -85,7 +85,7 @@ class PreferencesPage extends Component{
         <div className='grid-container'>
           <h6 className='date-header'>Choose what days you are free!</h6>
           <h6 className='sport-header'>Select your sport</h6>
-          <div className='sport-select'> 
+          <div className='pref-sport-select'> 
             <SportSelector changeSport={this.changeSport} sportsPicked={this.state.sports}/>
           </div>
           <div className='day1'>
@@ -210,9 +210,9 @@ class PreferencesPage extends Component{
               </div>
             }
           </div>
-            <div className="sport-character">
+            {/* <div className="sport-character">
               <img className="sport-character-image" src='https://www.seekpng.com/png/full/249-2495244_cricket-clipart-cricket-coach-sports-equipment-manager-cartoon.png' alt='sport-character'/>
-            </div>
+            </div> */}
             <button type="submit" className="btn btn-primary next-game-btn">Find My Next Game</button>
 
         </div>
