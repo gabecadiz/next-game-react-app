@@ -21,10 +21,8 @@ class Header extends Component {
 
   render(){
     return (
-    
-        <header className='header-container header-style'>
-         
-         
+      <header>
+
           { this.props.loginStatus ?  <img className='next-game-logo' src='https://i.imgur.com/7gwnVAA.png' alt='next-game-logo'/> : <span></span> }
         
           { this.props.loginStatus ? 
@@ -35,16 +33,17 @@ class Header extends Component {
               <NavLink className='linkStyle' activeClassName='nav-link-active' to="/mygames"> My Games </NavLink> 
               <button type="button" onClick ={this.handleLogout}className="btn btn-danger logout-btn">Logout!</button>
             </div>
+
           ) 
             : 
           (        
-          <div className='nav-container'>
-            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/signup"> Sign Up</NavLink> 
-            <NavLink className='linkStyle' activeClassName='nav-link-active' to="/login"> Log In </NavLink>
+          <div className='nav-container-landing'>
+            <NavLink className='linkStyle-landing' activeClassName='nav-link-active' to="/signup"> Sign Up</NavLink> 
+            <NavLink className='linkStyle-landing' activeClassName='nav-link-active' to="/login"> Log In </NavLink>
           </div>
           )}
 
-        </header>
+      </header>
     )
   }
 }

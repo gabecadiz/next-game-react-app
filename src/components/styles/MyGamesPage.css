@@ -81,7 +81,7 @@
     grid-row: 2;
     text-align: right;
     color: white;
-    text-shadow: 2px 2px grey;
+    text-shadow: 1px 1px #4c4c4c;
     margin-top: 1.6rem;
     margin-right: 2rem;
     font-size: 1.8rem;
@@ -94,7 +94,7 @@
     grid-row: 1;
     text-align: right;
     color: white;
-    text-shadow: 2px 2px grey;
+    text-shadow: 1px 1px #4c4c4c;
     font-size: 1.8rem;
     margin-top: 1.6rem;
     margin-right: 2rem;

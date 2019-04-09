@@ -16,7 +16,6 @@ div.login-container {
   max-width: 65rem;
   min-width: 48rem;
   min-height: 30rem;
-  border: 0.1rem solid black;
   border-radius: 0.5rem;
   background: #2a4eb03d;
   padding: 0;
@@ -70,7 +69,7 @@ div.login-image {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   position: relative;
-  border-left: 0.05rem solid black;
+  border-left: 0.05rem solid #4c4c4c;
   background: white;
 }
 
@@ -82,4 +81,8 @@ div.login-image img {
   right: -9999px;
   margin: auto;
   opacity: 0.85;
+}
+
+label.login-input-label {
+  width: 100%
 }

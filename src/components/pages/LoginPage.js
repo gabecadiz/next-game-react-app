@@ -53,12 +53,12 @@ class LoginPage extends Component {
         <div className="login-container">
           <div className="login-form">
             <form onSubmit={this.handleSubmit}>
-              <label>
+              <label className='login-input-label'>
                 <p>Enter your username test:</p>
                 <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
               </label>
               <br></br>
-              <label>
+              <label className='login-input-label'>
                 <p>Enter your password:</p>
                 <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
               </label>
