@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import NextGameCard from "../NextGameCard";
 import NextGameReferenceCard from "../NextGameReferenceCard";
-import Spinner from 'react-bootstrap/Spinner';
 import '../../NextGamePage.css'
 
 
@@ -59,7 +58,6 @@ class NextGames extends Component{
     return(
       
      <div>
-        {this.state.loaded ?  
           <div className="next-game-carousel-div">
           <Slider
           asNavFor={this.state.nav1}
@@ -86,10 +84,6 @@ class NextGames extends Component{
           )}
           </Slider>
         </div>
-
-        : 
-        <Spinner className ='loading-spinner' animation="border" />
-        }
       </div>
     )
   }

@@ -31,6 +31,11 @@ const SignIn = posed.div({
   exit: { opacity: 0 }
 });
 
+const Blurb = posed.div({
+  enter: { opacity: 1 },
+  exit: { opacity: 0 }
+});
+
 class LandingPage extends Component{
 
   state = { isVisible: false };
@@ -52,7 +57,9 @@ class LandingPage extends Component{
         <PoseGroup>
           {isVisible && [
             <NextGame key="next-game-title" className="landing-title">
-              <h1 key="land">Find <i>Your</i></h1>
+              <h1 key="land">Anytime. Anywhere.
+              <br></br>
+              Find <i>Your</i></h1>
             </NextGame>
           ]}
         </PoseGroup>
@@ -66,10 +73,26 @@ class LandingPage extends Component{
         <PoseGroup>
           {isVisible && [
               <SignIn key="next-game-buttons" className="landing-buttons">
+              <div>
                 <Link to="/signup"> <button type="button" className="btn btn-primary landing-signup">Sign up</button></Link>
+                </div>
+                <div>
                 <Link to="/login"> <button type="button" className="btn btn-success landing-login">Log In</button> </Link>
+                </div>
               </SignIn>
           ]}
+        </PoseGroup>
+      <PoseGroup>
+        {isVisible && [
+        <Blurb key="blurb">
+      <div className="blurbOne">
+      <div><p className="firstParagraph">Find your next pick up game!<br></br><br></br>
+      Next Game will find you multiple games close by <br></br>and will also suggest good locations for you <br></br>to start your own game.
+      <br></br><br></br>
+      You'll always have a place to play with Next Game.</p>
+        </div></div>
+        </Blurb>
+        ]}
         </PoseGroup>
       </div>
     )
