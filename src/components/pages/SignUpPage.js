@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SportSelector from '../SportSelector'
 import Alert from 'react-bootstrap/Alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/SignUpPage.css';
 
 
@@ -165,19 +166,19 @@ class SignUpPage extends Component{
             </div>
             <div className="signup-user-info">
               <label>
-                <p>Enter your username:</p>
+                <p><FontAwesomeIcon icon="user"/> Enter your username</p>
                 <input type="text" onChange={this.changeUsername} value={this.state.username} ref="username" className="form-control" />
               </label>
               <label>
-                <p>Enter your email:</p>
+                <p><FontAwesomeIcon icon="envelope"/> Enter your email</p>
                 <input type="email" onChange={this.changeEmail} value={this.state.email} name="email" ref="email" className="form-control" />
               </label>
               <label>
-              <p>Enter a password:</p>
+              <p><FontAwesomeIcon icon="key"/> Enter a password</p>
                 <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
               </label>
               <label>
-                <p>Confirm your password:</p>
+                <p><FontAwesomeIcon icon="key"/> Confirm password</p>
                 <input type="password" name="passwordConfirmation" onChange={this.changePasswordConfirmation} value={this.state.passwordConfirmation} ref="passwordConfirmation" className="form-control" />
               </label>
             </div>

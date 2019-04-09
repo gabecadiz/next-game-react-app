@@ -5,7 +5,6 @@ import DaySelector from '../DaySelector'
 import '../styles/PreferencesPage.css'
 import Card from 'react-bootstrap/Card';
 
-
 class PreferencesPage extends Component{
   state={
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/LoginPage.css';
 
 class LoginPage extends Component {
@@ -54,12 +55,12 @@ class LoginPage extends Component {
           <div className="login-form">
             <form onSubmit={this.handleSubmit}>
               <label className='login-input-label'>
-                <p>Enter your username test:</p>
+                <p> <FontAwesomeIcon icon="user"/> Enter your username:</p>
                 <input type="username" onChange={this.changeUsername} value={this.state.username} name="username" ref="username" className="form-control" />
               </label>
               <br></br>
               <label className='login-input-label'>
-                <p>Enter your password:</p>
+                <p> <FontAwesomeIcon icon="key"/> Enter your password:</p>
                 <input type="password" onChange={this.changePassword} value={this.state.password} name="password" ref="password" className="form-control" />
               </label>
               <div className="login-submit">

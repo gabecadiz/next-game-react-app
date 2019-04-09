@@ -7,8 +7,12 @@ import NextGamePage from "./components/pages/NextGamePage"
 import SignUpPage from "./components/pages/SignUpPage"
 import LoginPage from "./components/pages/LoginPage"
 import LandingPage from "./components/pages/LandingPage"
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser, faKey, faEnvelope, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
+
+library.add(faUser, faKey, faEnvelope, faCheckCircle, faTimesCircle);
+
 
 
 class App extends Component {
