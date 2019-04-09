@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import GoogleMapComponent from './GoogleMapComponent'
 import '../NextGamePage.css'
+import Swal from 'sweetalert2'
 
 class NextGameCard extends Component{
     handleNewAdd = (e) => {
 			e.preventDefault()
-			console.log(this.props)
+			Swal.fire({
+				position: 'center',
+				type: 'success',
+				title: 'Game added',
+				html: `<p>${this.props.locationData.sport} at ${this.props.locationData.facility} </p> <p>${this.props.locationData.date.substring(0, this.props.locationData.date.length - 5)} at ${this.props.locationData.time}</p>`,
+				showConfirmButton: true
+			})
 			fetch(`http://localhost:3000/api/users/${this.props.userId}/games`,{
 				mode: 'cors', 
 				credentials: 'include',
@@ -26,7 +33,13 @@ class NextGameCard extends Component{
 		
 		handleActiveAdd = (e) => {
 			e.preventDefault()
-			// console.log(this.props.locationData.gameId)
+			Swal.fire({
+				position: 'center',
+				type: 'success',
+				title: 'Game added',
+				html: `<p>${this.props.locationData.sport} at ${this.props.locationData.facility} </p> <p>${this.props.locationData.date.substring(0, this.props.locationData.date.length - 5)} at ${this.props.locationData.time}</p>`,
+				showConfirmButton: true
+			})
 			fetch(`http://localhost:3000/api/users/${this.props.userId}/games`,{
 				mode: 'cors', 
 				credentials: 'include',

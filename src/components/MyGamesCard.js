@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
 import GoogleMapComponent from './GoogleMapComponent'
+import Swal from 'sweetalert2'
 
 class MyGamesCard extends Component{
 	
     handleDeleteGame = (e) => {
 			e.preventDefault()
-			fetch(`http://localhost:3000/api/users/${this.props.userId}/games/${this.props.gameId}`,{
-				mode: 'cors', 
-				credentials: 'include',
-				method: 'DELETE',
-				body: JSON.stringify({
-					game_id: this.props.gameId
-				}),
-				headers:{
-					'Content-Type': 'application/json'
+			Swal.fire({
+				title: 'Are you sure you want to remove this game?',
+				text: "You won't be able to revert this!",
+				type: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+				if (result.value) {
+					Swal.fire(
+						'Deleted!',
+						'Your file has been deleted.',
+						'success'
+					)
+					fetch(`http://localhost:3000/api/users/${this.props.userId}/games/${this.props.gameId}`,{
+						mode: 'cors', 
+						credentials: 'include',
+						method: 'DELETE',
+						body: JSON.stringify({
+							game_id: this.props.gameId
+						}),
+						headers:{
+							'Content-Type': 'application/json'
+						}
+					})
+					.then( () => {
+						this.props.changeLoadedStatus()
+					})
 				}
-			})
-			.then( () => {
-				this.props.changeLoadedStatus()
 			})
 		}
 

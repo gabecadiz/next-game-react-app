@@ -22,7 +22,8 @@
     "react-slick": "^0.21.0",
     "react-switch": "^4.1.0",
     "recompose": "^0.30.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^8.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

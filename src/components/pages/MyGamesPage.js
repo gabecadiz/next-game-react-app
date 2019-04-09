@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import MyGamesAccordion from '../MyGamesAccordion'
+import Spinner from 'react-bootstrap/Spinner';
+
 import '../styles/MyGamesPage.css'
 
 
@@ -47,7 +49,7 @@ class MyGames extends Component{
     
     return(
         <div className="saved-game-page-container">
-         { !this.state.loaded ? <p> LOADING</p> : <MyGamesAccordion savedGames={this.state.data} userId={this.props.userId} changeLoadedStatus={this.changeLoadedStatus}/> }
+         { !this.state.loaded ? <Spinner className ='loading-spinner' animation="border" /> : <MyGamesAccordion savedGames={this.state.data} userId={this.props.userId} changeLoadedStatus={this.changeLoadedStatus}/> }
         </div>
     )
   }
