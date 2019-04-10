@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import GoogleMapComponent from './GoogleMapComponent'
-import Swal from 'sweetalert2'
+import GoogleMapComponent from './GoogleMapComponent';
+import Swal from 'sweetalert2';
+
 
 class MyGamesCard extends Component{
 	
@@ -13,12 +14,12 @@ class MyGamesCard extends Component{
 				showCancelButton: true,
 				confirmButtonColor: '#3085d6',
 				cancelButtonColor: '#d33',
-				confirmButtonText: 'Yes, delete it!'
+				confirmButtonText: 'Yes, remove it!'
 			}).then((result) => {
 				if (result.value) {
 					Swal.fire(
-						'Deleted!',
-						'Your file has been deleted.',
+						'Removed!',
+						'Your game has been removed',
 						'success'
 					)
 					fetch(`http://localhost:3000/api/users/${this.props.userId}/games/${this.props.gameId}`,{

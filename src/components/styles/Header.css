@@ -1,9 +1,8 @@
 .next-game-logo{
   position: absolute;
   left: 10px;
-  top: 10px;
-  height: 100px;
-  width: 250px;
+  top: 1vh;
+  height: 10vh;
 }
 .nav-container{
   display: flex;
@@ -14,7 +13,7 @@
   text-shadow: 1px 1px #606060;
   padding: 0.8rem;
   overflow: hidden;
-  height: 14vh;
+  height: 12vh;
   width: 100%;
 }
 .nav-container-landing{
@@ -26,7 +25,7 @@
   text-shadow: 1px 1px #606060;
   padding: 0.8rem;
   overflow: hidden;
-  height: 14vh;
+  height: 12vh;
   width: 100%;
 }
 .linkStyle{
