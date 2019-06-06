@@ -45,6 +45,7 @@ The results are weighted with a combination of how many current players are in t
 - slick-carousel
 - sweetalert2
 
-#Group Members
-[@amilford87](https://github.com/amilford87)
-[@MattccTO](https://github.com/MattccTO)
+##Group Members
+
+- [@amilford87](https://github.com/amilford87)
+- [@MattccTO](https://github.com/MattccTO)
