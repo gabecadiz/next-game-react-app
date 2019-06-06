@@ -2,12 +2,18 @@
 
 Next Game is a React based front-end that is combined with a with a ruby on rails API [backend](https://github.com/gabecadiz/next-game-rails-api)
 
-Next Game makes the search for your next outdoor pick-up game to be very quick and easy. Signup, provide your location, schedule and interested sports and right away we will provide you a list of pick-up games to choose from based on our pre-configured algorithm.
+Next Game is a Toronto based app which makes the search for your next outdoor pick-up game to be very quick and easy. Users of Next Game will be recommended games to play at official Toronto facilities. Signup, provide your location, schedule and interested sports and right away we will provide you a list of pick-up games to choose from based on our pre-configured algorithm.
 
 The results are weighted with a combination of how many current players are in the recommended game and how close the location is to your current location. If no current games meet your sport choice and/or fit your schedule, Next Game will recommend you a close facility to play the sport you are interested in. This will create a "new game" for other users to then be recommended in the future. This ensures you always have your Next Game!
 
-- Sign up / Login capabilities
-- Choose your preferences
+## Sign up / Login capabilities
+
+![Next-Game SignUp](/assets/next-game-signup.png)
+
+## Preferences Page
+
+![Next-Game Preferences Page](/assets/next-game-preferences.gif)
+
 - Select from a list of games
 - Save games you wish to attend
 
