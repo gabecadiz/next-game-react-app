@@ -14,8 +14,13 @@ The results are weighted with a combination of how many current players are in t
 
 ![Next-Game Preferences Page](/assets/next-game-preferences.gif)
 
-- Select from a list of games
-- Save games you wish to attend
+## Next Games (Recommended Game List)
+
+![Next-Games Recommended Game Page](/assets/next-game-recommendation.gif)
+
+## Saved Games
+
+![Next-Game Saved Games](/assets/next-game-saved-games.png)
 
 ### Setup
 
@@ -25,3 +30,17 @@ The results are weighted with a combination of how many current players are in t
 4. Run npm install
 5. Run npm start
 6. In your browser the app should run at http://localhost:3000/
+
+## Dependencies
+
+- Font Awesome
+- Bootstrap
+- JSON-loader
+- React
+- react-accessible-accordion
+- react-bootstrap
+- react-datepicker
+- react-google-maps
+- react-slick
+- slick-carousel
+- sweetalert2
