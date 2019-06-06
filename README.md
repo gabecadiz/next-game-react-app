@@ -16,7 +16,7 @@ The results are weighted with a combination of how many current players are in t
 
 ## Next Games (Recommended Game List)
 
-![Next-Games Recommended Game Page](/assets/next-game-recommendation.gif)
+![Next-Games Recommended Game Page](/assets/next-game-game-recommendation.gif)
 
 ## Saved Games
 
