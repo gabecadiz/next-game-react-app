@@ -31,7 +31,7 @@ The results are weighted with a combination of how many current players are in t
 5. Run npm start
 6. In your browser the app should run at http://localhost:3000/
 
-## Dependencies
+### Dependencies
 
 - Font Awesome
 - Bootstrap
@@ -45,7 +45,7 @@ The results are weighted with a combination of how many current players are in t
 - slick-carousel
 - sweetalert2
 
-## Group Members
+### Group Members
 
 - [@amilford87](https://github.com/amilford87)
 - [@MattccTO](https://github.com/MattccTO)
