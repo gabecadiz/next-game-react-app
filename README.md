@@ -41,6 +41,7 @@ The results are weighted with a combination of how many current players are in t
 - react-bootstrap
 - react-datepicker
 - react-google-maps
+- react-router-dom
 - react-slick
 - slick-carousel
 - sweetalert2
